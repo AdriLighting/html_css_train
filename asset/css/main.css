@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 
-/* Initialisation des variables */
+/* 
+  navbar
+    Initialisation des variables 
+    Réinitialisations CSS standard et le style de base
+*/
 :root {
   --navbar-bg-color: #000000;
   /* --navbar-bg-color: hsl(0, 0%, 15%); */
@@ -11,9 +15,7 @@
   --navbar-height:64px;
 }
 
-a:hover {
-  text-decoration: none;
-}
+
 
 * {
   /* 
@@ -27,6 +29,7 @@ a:hover {
 
   */  
   box-sizing: border-box; 
+
   margin: 0;
   padding: 0;
 }
@@ -42,7 +45,7 @@ body {
   background: #2f3238;
   color: #7f8289;
   font-size: 16px;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Titillium Web", "Helvetica", "sans-serif";
   line-height: 28px;
 }
 
@@ -85,18 +88,24 @@ h3.spec {
   line-height: 1em;
   margin-bottom: 30px;
   text-transform: uppercase;
+
 }
 h7 {
-  position:absolute; /*  */
+  /*
+    Un élément positionné avec position: 
+      absolute va être positionné par rapport à son parent le plus proche positionné (avec une valeur de position différente de static).  
+    Le point de référence pour les propriétés top, left, bottom et right va ainsi être le côté de l’élément parent liée à la propriété (côté gauche pour left, supérieur pour top , etc.).       
+  */
+  position:absolute; /* fair en sorte d'avoit un tooltip au bas de l'image */
   left: 0;
   bottom: 0;
-  width: 98%;
+  width: 100%;
   text-align: center;
   color: #FFF;
   font-size: 15px;
   background-color:rgba(14, 14, 14, 0.466);
-  margin-left: 0.2em;
-  margin-bottom: 0;
+
+  margin-bottom: 8px;
   font-weight: bold;
 
 }
@@ -111,11 +120,27 @@ main {
   padding-top: 64px;
 }
 
-.mb-1 {
-  margin-bottom: 1em;
+
+
+.mb-01e {margin-bottom: 0.1em;}
+.mb-1e {margin-bottom: 1em;}
+.mt-1e {margin-top: 1em;}
+.mt-2e {margin-top: 2em;}
+.bg-dark {background-color: #26292E;}
+.bg-light {background-color: #7e7d7d23;}
+.pad-1e {padding: 1em;}
+.tc{text-align:center;}
+
+.footer-p {
+  background-color: #00000075;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
 }
 
- 
+
 /* 
   ######################################################################
   TEXT  
@@ -128,6 +153,7 @@ main {
 .title-page .title {
   font-size: 3.5em;
   margin: 0 0 0.1em;
+  text-shadow: 2px 2px #000000;
 }
 .title-description {
   width: 99%;
@@ -136,9 +162,22 @@ main {
   text-align: justify;
   margin: 0;
   padding: 0 1em 0 1em;
+  
+}
+
+#gallery_2 .title-description  {
+  text-align:center;
+}
+#gallery_1 .title-description  {
+  text-align:center;
 }
 
 
+/* 
+  ######################################################################
+  SHOP  
+  ######################################################################  
+*/
 .boutique-pres{
   padding: 0;
   margin: 0;
@@ -148,6 +187,7 @@ main {
   text-align: center;
 }
 .default_backgroud_img {
+  transition-duration: 650ms;
   border: 1px solid rgba(255, 255, 255, 0.541);
   border-radius: 20px 20px 0 0;
   max-height: 500px;
@@ -163,20 +203,16 @@ main {
 */
 .container-contact {
   background-color:#2F3238;
-  position:relative;
-  z-index:99
+  z-index:1
  }
- @media (min-width: 481px) and (max-width: 767px) {
-	.page {
-		margin-left: -20px;
-		margin-right: -20px;
-		padding-left: 20px;
-		padding-right: 20px;	
-	}  
+
+.container-contact .container .span4 {
+  border-radius: 20px 20px 20px 20px;  
 }
+
 .contact-details {
   text-align: center;
-  margin-bottom: 100px;
+  height: 10em;
 }
 .contact-details h3 {
   color: #fff;
@@ -187,41 +223,90 @@ main {
   text-transform: uppercase;
 }
 
+
 /*
  ######################################################################
- Debut Gallery
+ Gallery
  ######################################################################
 */
+
 .gallery {
   padding: 0;
   margin: 0;
-  background-color: #2F3238;
   padding-top: 1em;
   padding-bottom: 2em;
 }
-.bg-dark{
-  background-color: #26292E;;
-}
-.container-img {
 
+.container-img {
+  /* https://www.zonecss.fr/proprietes-css/display-css.html#display-css-propriete */
   display: flex;
+/*
+https://www.zonecss.fr/proprietes-css/align-items-css.html#align-items-css-propriete
+La propriété de feuille de style align-items CSS peut prendre la valeur de :
+  flex-start : le "coin de début" (margin incluses) de chaque élément flexible est collé sur le "début transversal de la ligne* de flexibles".
+  flex-end : le "coin de fin" (margin incluses) chaque élément flexible est collé sur sur la "fin transversal" de la ligne.
+  center : chaque élément flexible (margin incluses) est centré par rapport à "l'axe transversal" de la ligne* de flexibles.
+  baseline : chaque élément flexible s'aligne sur leur baseline afin de partager la même ligne de base (baseline) sur sa ligne. Si l'élément flexible n'a pas de ligne de base, alors elle est calculée en fonction par des bordures de l'élément flexible.
+  stretch : chaque élément flexible qui respecte les règles d'application est étiré afin que sa taille (margin incluses) prenne toute la hauteur de sa ligne* de flexibles tout en respectant les contraintes imposées par min-height, max-height et min-width , max-width. Valeur par défaut.
+  normal : identique à la valeur stretch, valeur par défaut. Je vous conseille faire un reset de cette valeur pour stretch en ce qui concerne les Flexbox Css.
+
+La propriété de feuille de style align-items CSS est applicable sur l'ensemble des balises HTML ou XHTML, si elles sont le container Grid Css (display:[inline-]grid), Flex Css (display:[inline-]flex) ou Multi-Column Css (column[-*]).
+*/
   align-items: center;
+/*
+https://www.zonecss.fr/proprietes-css/justify-content-css.html#justify-content-css-propriete
+La propriété de feuille de style justify-content CSS peut prendre la valeur d'alignement de :
+  flex-start : le "coin de début" (margin incluses) du premier élément flexible ou grille est collé sur le "début principal", chaque élément flexible ou grille suivant est placé au ras de l'élément précédent. Valeur par défaut.
+  flex-end : le "coin de fin" (margin incluses) du dernier élément flexible ou grille est collé sur la "fin principale", chaque élément flexible ou grille suivant est placé au ras de l'élément précédent.
+  center : chaque élément flexible ou grille suivant est placé au ras de l'élément précédent. Et l'ensemble des éléments flexibles ou grilles est centré par rapport au centre de "l'axe principal".
+  space-between : le "coin de début" (margin incluses) du premier élément flexible ou grille est collé sur le "début principal", le "coin de fin" (margin incluses) du dernier élément flexible ou grille est collé sur la "fin principale". Puis les espaces de part et d'autre de chaque élément flexible sont répartis de manière égale.
+  space-around : les espaces de part et d'autre de chaque élément flexible ou grille sont de taille identique.
+
+La propriété de feuille de style justify-content CSS est applicable sur l'ensemble des balises HTML ou XHTML, si elles sont le container Grid Css (display:[inline-]grid), Flex Css (display:[inline-]flex) ou Multi-Column Css (column[-*]).
+*/
   justify-content: center;
-  flex-wrap: wrap;
+/*
+  nowrap : les éléments flexibles sont disposés sur une seule ligne ou colonne, c'est la valeur par défaut.
+  wrap : les éléments flexibles sont disposés si nécessaire sur plusieurs lignes : les un en dessous des autres ou, sur plusieurs colonnes : les un à côté des autres vers la droite.
+  wrap-reverse : les éléments flexibles sont disposés si nécessaire sur plusieurs lignes les un en dessus des autres ou colonnes : les un à côté des autres vers la gauche.
+
+  La propriété de feuille de style flex-grow CSS est applicable sur l'ensemble des balises HTML ou XHTML, si elles sont le conteneur Flexbox Css d'éléments "flexibles" et qu'il soit de type display:[inline-]flex.
+*/
+  flex-wrap: wrap; /* dépende de la valeur flex de l'attribut display */
 	width: 90%;
   margin: auto;
 }
-.grid-item {
-  z-index: 1;
-  transform: translate3d(0px, 0px, 0px);
+.container-img a:hover {
+  text-decoration: none;
 }
 
+.grid-item {
+/*
+La fonction de Translation CSS translate3d(X, Y, Z) CSS accepte comme argument de déplacement :
+  X : nombre positif ou négatif suivi d'une unité CSS de longueur ou de % (pourcentage), représentant la translation sur l'axe X.
+  Y : nombre positif ou négatif suivi d'une unité CSS de longueur ou de %, représentant la translation sur l'axe Y.
+  Z : nombre positif ou négatif suivi d'une unité CSS de longueur (sauf %), représentant la translation sur l'axe Z.
+  Si le nombre est égal à 0, c'est la position d'origine sur l'axe concerné.
+
+Conditions d'application de la CSS translate3d().
+  La fonction de Translation CSS translate3d() est applicable avec la propriété de Transformation CSS transform et avec ses propriétés de Transformation préfixées (-moz-transform, -webkit-transform, -ms-transform).
+
+Problème d'interprétation de translate3d() en Css.
+  La propriété de Transformation CSS transform n'est reconnue par certains navigateurs.
+
+Conditions d'animation de translate3d() en CSS3.
+  Mettez transform comme valeur de la propriété de Transformation CSS transition-property.
+
+  La CSS translate3d() est une fonction de feuille de style qui peut être utilisée pour les animations CSS et transitions CSS.
+*/
+  transform: translate3d(0px, 0px, 0px);
+  margin: 0 0.2em 0 0;
+}
 .grid-item img {
 	width: 100%;
 	height: auto;
-  padding: 0.2em;
-  padding-bottom: 0;
-  margin: 0;
+  padding: 0;
+  margin: 0 0 0 0;
 }
 
 .container-img span {
@@ -236,6 +321,34 @@ main {
   text-shadow: 2px 2px #333;
 
   display:flex; /* permettre l'alignements des items */
+/*
+https://www.zonecss.fr/proprietes-css/position-css.html#position-css-propriete
+La propriété de feuille de style position CSS peut prendre la valeur de position :
+  static : n'est pas considéré comme un élément positionné, left, top, right et bottom sont ignorés. Valeur par défaut.
+  relative : l'élément est considéré comme positionné, le positionnement se fera par rapport à l'endroit où il est positionné dans le flux (où l'élément a été déclaré dans le code HTML), sauf pour certain éléments de tableau.
+  absolute : l'élément est considéré comme positionné, le positionnement se fera par rapport au coin haut gauche de la page HTML ou par rapport au premier parent trouvé qui n'est pas static. Son comportement est de type block et sort du flux.
+  fixed : l'élément est considéré comme positionné, reste fixe, ne bouge pas quand défile l'écran, le point d'origine est coin haut gauche de la zone de contenu de la fenêtre. Son comportement est de type block et sort du flux.
+  sticky (CSS3) : c'est un mixte entre la position relative et fixe. L'élément est considéré en position relative jusqu'à ce que le défilement de la fenêtre soit telle que l'élément serait à moins de la valeur du seuil (top, left, right, bottom). Au-delà de ce seuil, l'élément serait fixé à la valeur du seuil qui est obligatoire. Son positionnement se fera par rapport au coin haut gauche de la page HTML ou par rapport au premier parent trouvé qui n'est pas static et à l'intérieur de cet élément.
+
+Conditions d'application de la CSS position.
+  La propriété CSS position est applicable sur toutes les balises HTML ou XHTML.
+
+Héritage des valeurs Css de position.
+  Les balises filles HTML ou XHTML n'héritent pas de la propriété position CSS.
+
+Problème d'interprétation de position en Css.
+  La propriété position CSS ne pose aucun problème d'interprétation, sauf pour "fixed" sous Internet Explorer qui n'est reconnue qu'à partir de la version 7+ et sauf pour "sticky" sur les balises HTML table et ses enfants (th, td, ...)
+
+Règles de syntaxes CSS pour position.
+position et les propriétés CSS display et float
+  si la propriété CSS display est à none, alors la propriété position CSS est ignorée.
+  Si la propriété de feuille de style position CSS a une valeur de absolute ou fixed alors, la valeur de display se transforme en block pour :
+    inline,
+    inline-block,
+    table-[*].
+  ou en table pour :
+    inline-table.
+*/
   position:relative; /* permettre d'effectuer un decalage ver le haut */
   align-items: center;
   justify-content: center;
@@ -252,7 +365,7 @@ main {
 
 /*
  ######################################################################
- Debut FIXED TOP NAVBAR
+ FIXED TOP NAVBAR
  ######################################################################
 */
 
@@ -314,13 +427,17 @@ main {
 
 .navbar-logo {
   background-color: var(--navbar-text-color-focus);
+  background-image: url("/asset/img/logo.jpg");
   border-radius: 50%;
-  width: 30px;
+  width: 150px;
   height: 30px;
   margin-inline-start: 0.5em;
   margin-inline-end: 0.5em;
 }
 
+/*
+  Navbar Toggle button
+*/
 #navbar-toggle {
   cursor: pointer;
   border: none;
@@ -332,7 +449,10 @@ main {
   justify-content: center;
   flex-direction: column;
 }
-
+/*
+  Navbar Toggle button
+    ligne interieur du bouto (dessin menu)
+*/
 .icon-bar {
   display: block;
   width: 25px;
@@ -345,26 +465,43 @@ main {
   background-color: var(--navbar-text-color-focus);
 }
 
+
+/*
+GESTION DU MENU
+  aria-controls = "navbar-menu"
+  aria-label    = "Toggle menu"
+  aria-expanded = "false"
+CONTROLER VIA
+  type          = "button"
+  id            = "navbar-toggle"
+*/
+
+/*
+si le panneau est déplier (aria-expanded)
+ apllique un angle de 45deg sur 1er et dernier ligne 
+*/
 #navbar-toggle[aria-expanded='true'] .icon-bar:is(:first-child, :last-child) {
-  position: absolute;
+  position:absolute; /* positioné par rapport au point haut guauche de l'element parent */
   margin: 0;
   width: 30px;
 }
 
 #navbar-toggle[aria-expanded='true'] .icon-bar:first-child {
-  transform: rotate(45deg);
+  transform: rotate(45deg); /* pour former la croix */
 }
 
 #navbar-toggle[aria-expanded='true'] .icon-bar:nth-child(2) {
-  opacity: 0;
+  opacity: 0; /* masque la ligne du millieu */
 }
 
 #navbar-toggle[aria-expanded='true'] .icon-bar:last-child {
-  transform: rotate(-45deg);
+  transform: rotate(-45deg); /* pour former la croix */
 }
 
+/*
+  elements du menu
+*/
 #navbar-menu {
-  
   position: fixed;
   top: var(--navbar-height);
   bottom: 0;
@@ -398,32 +535,5 @@ main {
 
 #navbar-toggle[aria-expanded='true'] + #navbar-menu .navbar-links {
   padding: 1em;
-}
-
-@media screen and (min-width: 700px) {
-  #navbar-toggle,
-  #navbar-toggle[aria-expanded='true'] {
-    display: none;
-  }
-
-  #navbar-menu,
-  #navbar-toggle[aria-expanded='true'] + #navbar-menu {
-    visibility: visible;
-    opacity: 1;
-    position: static;
-    display: block;
-    height: 100%;
-  }
-
-  .navbar-links,
-  #navbar-toggle[aria-expanded='true'] + #navbar-menu .navbar-links {
-    margin: 0;
-    padding: 0;
-    box-shadow: none;
-    position: static;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-  }
 }
 

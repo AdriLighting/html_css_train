@@ -39,7 +39,7 @@
   
 
   <!-- 
-    Internal CSS 
+    Internal CSS By Adri 180323
   -->
   <link rel="stylesheet" type="text/css" href="/asset/css/main.css">
   
@@ -68,9 +68,9 @@
       <!-- Website logo -->
       <a href="/" class="home-link">
         <div class="navbar-logo"></div>
-        Website Name
+        <!-- Website Name -->
       </a>
-      <!-- Navbar Toggle link button -->
+      <!-- Navbar Toggle button -->
       <button
         type="button"
         id="navbar-toggle"
@@ -85,10 +85,8 @@
       <!-- Navbar Links -->
       <div id="navbar-menu" aria-labelledby="navbar-toggle">
         <ul class="navbar-links">
-          <li class="navbar-item"><a class="navbar-link" href="/about">About</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="/blog">Blog</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="/careers">Careers</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="/contact">Contact</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#boutique">About</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -97,15 +95,17 @@
   <!-- End HEADER -->
 
   <main>
+
     <!-- START SECTIONS -->
-    <!-- Shop presentation -->
-    <section class="boutique-pres bg-dark">
+
+    <!-- Shop -->
+    <section id="boutique" class="boutique-pres bg-dark">
       <div class="title-page">
         <!-- Title -->
         <h2 class="title">Effets & Matières</h2>
         <!-- Banierre -->
         <img
-        class="default_backgroud_img mb-1"
+        class="default_backgroud_img mb-01e"
         src="/asset/img/banierre.jpg"
         alt="Default img"
         />      
@@ -116,7 +116,7 @@
         </h3>
       </div>
     </section>
-    <!-- End Shop presentation -->
+
     <!-- 
       Section picture Gallery
         class global pour une galeries photos 
@@ -124,31 +124,27 @@
           description
           galeries photos
     -->
-    <!-- creations -->
-    <section class="gallery">
+    <!-- Pictures gallery_1 -->
+    <section id="gallery_1" class="gallery">
       <div class="title-page">
         <!-- Title --> 
-        <h2 class="title">Lorem, ipsum.</h2>
+        <h2 class="title">Nouveautés</h2>
         <!-- Title description --> 
         <h3 class="title-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui laborum a magnam, deleniti commodi tempore possimus nam recusandae, ex at deserunt ab quisquam optio, quaerat corporis! Vitae quod officiis fugiat.
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores ex veniam quia dolore, nobis nihil aut dignissimos, tempore corrupti omnis vel? Vitae in magni minima aliquid atque tempora quam ea.
-          Est molestiae consequatur necessitatibus, beatae sequi explicabo reiciendis, laborum sunt repudiandae ut rerum ea eos iure distinctio dolores blanditiis dolor, voluptatum tempora aliquid reprehenderit nam iste quisquam debitis veritatis. Nemo.
-          Et eaque, earum adipisci deleniti pariatur necessitatibus nemo suscipit culpa, quasi corrupti aliquam, dolor mollitia officiis soluta. Minima quis veritatis qui ipsa unde nisi, aliquam eaque modi commodi, quae vero!
-          Facilis porro veniam corrupti et quae libero vitae, magni numquam amet possimus! Harum reprehenderit expedita excepturi provident officia veritatis at sapiente, facere culpa delectus non fuga consectetur aut adipisci. Alias!
-          Minima natus reiciendis eaque error! Deleniti, ut officiis obcaecati laboriosam voluptas nostrum sunt esse atque delectus inventore nisi veniam dolore, fuga doloribus! Consectetur corporis maiores quia libero, sint pariatur fugit.
+          Le printemps 🌱arrive doucement … une petite création printanière artisanale 🌸? Venez nous rendre visite , tous les créateurs ont amené de belles nouveautés ❤️
         </h3>
       </div>
       <!-- Shop Picture Gallery -->
-      <div class="container-img" id="section_creations">
+      <div class="container-img" id="gallery_creations">
         <div id="gallery_creations_img_0" class="grid-item">
-          <a href="/asset/img/pa1.jpg" data-fancybox="gallery_creations" data-caption="Caption #1">
-            <img src="/asset/img/pa1_t.jpg" alt="pa1" />
-            <h7>L&eacute;gende en bas</h7>
+          <a href="/asset/img/g1/g1_2.jpg" data-fancybox="gallery_creations" data-caption="Photos #1">
+            <img src="/asset/img/g1_t/g1_2.jpg" alt="Photos #1" />
+            <h7>Photos #1</h7>
           </a>
         </div>
       </div>
     </section>
+
     <!-- 
       Section picture Gallery
         class global pour une galeries photos 
@@ -156,27 +152,32 @@
           description
           galeries photos
     -->
-    <!-- ventes -->
-    <section class="gallery bg-dark">
+    <!-- Pictures gallery_2 -->
+    <section id="gallery_2" class="gallery bg-dark">
       <div class="title-page">
         <!-- Title description --> 
-        <h2 class="title">Lorem, ipsum.</h2> 
+        <h2 class="title">Nouvelles Vitrines</h2> 
         <!-- Title --> 
         <h3 class="title-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui laborum a magnam, deleniti commodi tempore possimus nam recusandae, ex at deserunt ab quisquam optio, quaerat corporis! Vitae quod officiis fugiat.
+          Venez vous régaler les pupilles!<br>
+          De belles nouveautés vous attendent à la boutique!<br>
+          Il y aura forcément des cadeaux uniques à offrir, ou à s'offrir au pied du sapin!<br>
+          Nous aurons plaisir à vous accueillir et vous conseiller!<br>
+          À bientôt de vous voir!
         </h3>
       </div>
-      <!-- Shop Picture Gallery -->
-      <div class="container-img" id="section_ventes">
-        <div id="gallery_ventes_img_0" class="grid-item">
-          <a href="/asset/img/pa1.jpg" data-fancybox="gallery_ventes" data-caption="Caption #1">
-            <img src="/asset/img/pa1_t.jpg" alt="pa1" />
-            <h7>L&eacute;gende en bas</h7>
+      <!-- Pictures -->
+      <div class="container-img" id="gallery_other">
+        <div id="gallery_other_img_0" class="grid-item">
+          <a href="/asset/img/g2/g2_1.jpg" data-fancybox="gallery_other" data-caption="Photos #1">
+            <img src="/asset/img/g2_t/g2_1.jpg" alt="Photos #1" />
+            <h7>Photos #1</h7>
           </a>
           
         </div>
       </div>
     </section>
+
     <!-- 
       Section contact
     -->    
@@ -186,23 +187,23 @@
           <div class="title-page">
             <h2 class="title">Coordonnées</h2>
             <h3 class="title-description">
-              Notre boutique est situé à Tournon sur Rhône, à 100 km au sud de Lyon. Pour tout renseignements, je vous invite à nous joindre à l'aide des informations suivantes. 
+              Notre boutique est situé à Tournon sur Rhône, à 100 km au sud de Lyon. Pour tout renseignements, nous vous invitons à nous joindre à l'aide des informations suivantes. 
             </h3>
           </div>          
-          <div class="row">
-            <div class="span4">
+          <div class="row mb-1e">
+            <div class="span4 bg-light pad-1e">
               <div class="contact-details">
                 <h3>Courriel</h3>
                 <a href="mailto:mail@mail.fr">mail@mail.fr</a>
               </div>
             </div>
-            <div class="span4">
-              <div class="contact-details">
+            <div class="span4 bg-light pad-1e">
+              <div class="contact-details ">
                 <h3>Téléphone</h3>
                 (+33) 06 00 00 00 00
               </div>
             </div>
-            <div class="span4">
+            <div class="span4 bg-light pad-1e">
               <div class="contact-details">
                 <h3>Adresse</h3>
                 13 Rue Thiers
@@ -223,6 +224,12 @@
     </section>
   </main>
 
+  <footer id="footer">
+    <div class="footer-p">
+      <p>&copy;Tp</p>
+    </div>
+  </footer>
+
   <!-- 
     fancybox Javascript 
       https://fancyapps.com/fancybox/getting-started/ 
@@ -230,7 +237,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 
   <!-- 
-    Internal Javascript 
+    Internal Javascript By Adri 180323
   -->
   <script src="/asset/js/index.js"></script>
 

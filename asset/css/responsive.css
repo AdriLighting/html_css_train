@@ -1,9 +1,40 @@
 @media only screen and (max-width: 450px) {
     .title-page .title {
+        transition-duration: 650ms;
         font-size: 2.2em;
       }
       .title-description {
+        transition-duration: 650ms;
         font-size: 1.2em;
       }
-}  
+}
+
+@media screen and (min-width: 700px) {
+  #navbar-toggle,
+  #navbar-toggle[aria-expanded='true'] {
+    display: none;
+  }
+
+  #navbar-menu,
+  #navbar-toggle[aria-expanded='true'] + #navbar-menu {
+    visibility: visible;
+    opacity: 1;
+    position: static;
+    display: block;
+    height: 100%;
+  }
+
+  .navbar-links,
+  #navbar-toggle[aria-expanded='true'] + #navbar-menu .navbar-links {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    position: static;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
 

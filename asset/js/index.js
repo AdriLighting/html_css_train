@@ -15,31 +15,40 @@ navbarLinksContainer.addEventListener('click', (e) => e.stopPropagation());
 navbarMenu.addEventListener('click', toggleNavbarVisibility);
 
 $(document).ready(function () {
-  for (let index = 0; index < 8; index++) {
+  for (let index = 0; index < 7; index++) {
     var c2 = $('#gallery_creations_img_0').clone();
     c2.attr('id', 'gallery_creations_img_' + (index + 1));        // modifiy dom attribut
     c2.attr('title', 'gallery_creations_img_' + (index + 1));
     c2.attr('name', 'gallery_creations_img_' + (index + 1));
-    c2.find('h2').html('gallery_creations_img_ ' + (index + 2));   // modify h2 > html (value)
-    c2.appendTo('#section_creations');
+    c2.find('img').attr('src', '/asset/img/g1_t/g1_'+ (index + 3)+'.jpg' );   //
+    c2.find('img').attr('alt', 'Photos #'+ (index + 2) );   //
+    c2.find('a').attr('href', '/asset/img/g1/g1_'+ (index + 3)+'.jpg' );   //
+    c2.find('a').attr('data-caption', 'Photos #'+ (index + 2) );   //
+    c2.find('h7').html('Photos #'+ (index + 2) );   //
+    c2.appendTo('#gallery_creations');
   }
 });
 
 $(document).ready(function () {
-  for (let index = 0; index < 8; index++) {
-    var c2 = $('#gallery_ventes_img_0').clone();
-    c2.attr('id', 'gallery_ventes_img_' + (index + 1));        // modifiy dom attribut
-    c2.attr('title', 'gallery_ventes_img_' + (index + 1));
-    c2.attr('name', 'gallery_ventes_img_' + (index + 1));
-    c2.find('h2').html('gallery_ventes_img_ ' + (index + 2));   // modify h2 > html (value)
-    c2.appendTo('#section_ventes');
+  for (let index = 0; index < 4; index++) {
+    var c2 = $('#gallery_other_img_0').clone();
+    c2.attr('id', 'gallery_other_img_' + (index + 1));        // modifiy dom attribut
+    c2.attr('title', 'gallery_other_img_' + (index + 1));
+    c2.attr('name', 'gallery_other_img_' + (index + 1));
+    c2.find('img').attr('src', '/asset/img/g2_t/g2_'+ (index + 2)+'.jpg' );   //
+    c2.find('img').attr('alt', 'Photos #'+ (index + 2));   //
+    c2.find('a').attr('href', '/asset/img/g2/g2_'+ (index + 2)+'.jpg' );   //
+    c2.find('a').attr('data-caption', 'Photos #'+ (index + 2) );   //
+    c2.find('h7').html('Photos #'+ (index + 2) );   //
+
+    c2.appendTo('#gallery_other');
   }
 });
 
 Fancybox.bind('[data-fancybox="gallery_creations"]', {
   //
 });   
-Fancybox.bind('[data-fancybox="gallery_ventes"]', {
+Fancybox.bind('[data-fancybox="gallery_other"]', {
   //
 });   
 
