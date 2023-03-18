@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="desctiption" content="Ma description">
+  <title>Titre/Logo du site</title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="asset/css/ressources/normalize.css">
+  <link rel="stylesheet" href="asset/css/main.css">
+  <link rel="stylesheet" href="asset/css/style.css">
+  <script
+  src="https://kit.fontawesome.com/4aed19a16a.js"
+  crossorigin="anonymous"
+  ></script>  
+  <script src="asset/js/core.js"></script>
+  <script>
+    
+    /*
+ var obj = {};
+ obj.data = "value";
+let myfunc = function()  {return "value_2";}
+function myfunc_2 (val) {return "value_" + val;}
+
+  let varFunc = function(val) {
+    let firstRes = myFunction( function(result = val) {return myfunc_2(result);} );
+    return firstRes;
+  }
+  console.log(varFunc("dataVar"));
+  console.log(myFunction( () => {return "data";}  ));
+*/
+
+  </script>
+</head>
+
+<body>
+  <header>
+    <nav title="menu preicipal" class="navbar-fixed-top">
+
+      <!-- *** Creer un logo/titre responsive *** -->
+      <div class="row">
+      <div class="col">
+        <h1 title="titre du site" class="navbar-brand">ALPI</h1>
+      </div>
+      <div class="col ">
+        <div class="float-right">
+          <button class="flat" onclick="sidebar_toggle()">
+            <i class="fas fa-bars fa-fw fa-xl"></i>
+          </button>          
+        </div>
+      </div>
+      </div>
+    </nav>
+  </header>
+
+  <!--  row container 
+            col-left  |   col-right 
+            sidebar   |   section articles
+                      |   section formulaire de contact
+  -->
+  <div class="row">
+
+    <div class="navbar-fixed-top-line"></div>
+
+    <!-- Main contener on the right colone -->
+    <main class="col-right">
+      
+      <!-- Top of article sections -->
+      <section id="section_articles">
+
+        <!-- Heder && title of the articles section -->
+        <header>
+          <h2>Début de la section <q>liste des articles</q></h2>
+        </header>
+
+        <!-- Developpement article -->
+        <article title="Article Developpemnt" class="card card-article" id="article_dev">
+            
+            <!-- <a href="#"> -->
+            <header>
+              <h2>Notions de base</h2>
+            </header>
+            
+            <p id="height"></p>
+            <p id="width"></p>
+            <div class="pl-2">
+              <div class="pbt-2">
+                <p class="p-0 m-0 wh-100">Front-End: </p>
+                <div class="container-icon">
+                  <div class="form-icon html" title="html5"></div>
+                  <div class="form-icon css" title="css"></div>
+                  <div class="form-icon javascript" title="javascript"></div>
+                </div>
+                <div class="pb-2"></div>
+                <p class="wh-100">Back-End: </p>
+                <div class="container-icon">
+                  <div class="form-icon nodejs" title="nodejs"></div>
+                  <div class="form-icon mysql" title="mysql"></div>
+                </div>
+                <div class="pb-2"></div>
+                <p class="wh-100">Microcontroller: </p>
+                <div class="container-icon">
+                  <div class="form-icon arduino" title="arduino"></div>
+                  <div class="form-icon cpp" title="cpp"></div>
+                  <div class="form-icon esp" title="esp"></div>
+                </div>
+              </div>
+            </div>
+          <!-- </a> -->
+        </article>
+        
+        <!-- Reference article for the js function -->
+        <article title="Article 0" class="card card-article-wPic" id="article_0">
+          <a href="#">
+            <img
+              class="default_backgroud_img"
+              src="asset/img/png/bg_1.png"
+              alt="Default img"
+            />
+
+            <!-- Heder && title of the article -->
+            <header>
+              <h2>Article 1</h2>
+            </header>
+
+            <!-- Paragraphe(s) of the article -->
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Corporis enim modi asperiores hic totam dignissimos, deserunt
+              voluptate provident nostrum officia. Tempora ab similique,
+              nemo dolorem laborum recusandae neque veritatis dolor.
+              Perferendis placeat odit mollitia quidem cupiditate asperiores
+              iusto, dolores eaque ad iure voluptas itaque perspiciatis
+              officiis magni nisi minus adipisci reprehenderit sint? In
+              soluta et quos doloremque nostrum illum fugit?
+
+            </p>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </a>
+        </article>
+
+        <!-- Articles poped by js -->
+
+      </section> <!-- End of articles section -->
+
+      <!--  Contact Formulaire
+                ajouter un cotainer row && col pour ajouter un texte area a droite des input -->
+      <section id="formulaire" class="card card-article">
+        <header>
+          <h2>Formulaire pour me contacter</h2>
+        </header>
+        <form action="#" method="get">
+          <div class="formulaire-container">
+            <div class="formulaire-col">
+              <div class="lbl">
+                <label >First name</label>
+              </div>
+              <div class="lbl">
+                <label for="inp_contact_lname">Last name</label>
+              </div>
+              <div class="lbl">
+                <label for="inp_contact_mail">Email</label>
+              </div>
+            </div>            
+            <div class="formulaire-col">
+              <div class="lbl">
+                <input type="text" name="inp_contact_fname" id="inp_contact_fname" required>
+              </div>
+              <div class="lbl">
+                <input type="text" name="inp_contact_lname" id="inp_contact_lname" required>
+              </div>
+              <div class="lbl">
+                <input type="email" name="inp_contact_mail" id="inp_contact_mail" required>
+              </div>
+            </div>
+          </div>
+          <div class="formulaire-textarea">
+            <textarea name="" id="" cols="50" rows="5" required></textarea>
+          </div>
+
+          <button type="submit">Envoyer</button>
+        </form>
+      </section> <!-- Contact Formulaire -->
+    </main>
+
+    <!-- REMOVED CLASS: col-left sidebar-left d-none d-lg-block -->
+    <!-- Left sidebar fixed && full height on te left colone -->
+    <aside id="sidebar_left" class="sidebar-left sidebar-left-active">
+      <ul class="sidebar-left-postion list-square">
+        <li class="li_menu">
+          <a id="link-accueil" class="href-menu" link-position="article_dev 60" >
+            <div class="form-icon form-icon-sidebar home" title="Accueil"></div>
+            <span class="link-display">Accueil</span>
+          </a>
+        </li>
+        <li class="pt-2 li_menu">
+          <a id="link-developpement" class="href-menu" link-position="article_dev 60" >
+            <div class="form-icon form-icon-sidebar developpement" title="Developpement"></div>
+            <span class="link-display">Developpement</span>
+          </a>
+        </li>
+        <li class="pt-2 li_menu">
+          <a id="link-realisations" class="href-menu" link-position="article_0 60" >
+            <div class="form-icon form-icon-sidebar vscode" title="Réalisation"></div>
+            <span class="link-display">Réalisation</span>
+          </a>
+        </li>
+        <li class="pt-2 li_menu">
+          <a id="link-contact" class="href-menu" link-position="formulaire 0" >
+            <div class="form-icon form-icon-sidebar contact" title="Contact"></div>
+            <span class="link-display">Contact</span></a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Footer on the right colone -->
+    <footer id="footer" title="menu preicipal" class="col-right">
+      <div class="footer-p">
+        <p>&copy;Tp</p>
+      </div>
+    </footer>
+  </div> <!-- End of row container -->
+  <script>
+      load_articles();
+      set_link();
+      reportWindowSize();
+      //
+  </script>
+</body>
+
+</html>
