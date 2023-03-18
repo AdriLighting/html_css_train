@@ -1,0 +1,9 @@
+@media only screen and (max-width: 450px) {
+    .title-page .title {
+        font-size: 2.2em;
+      }
+      .title-description {
+        font-size: 1.2em;
+      }
+}  
+

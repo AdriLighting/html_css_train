@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+
+/* Initialisation des variables */
+:root {
+  --navbar-bg-color: #000000;
+  /* --navbar-bg-color: hsl(0, 0%, 15%); */
+  --navbar-text-color: hsl(0, 0%, 85%);
+  --navbar-text-color-focus: white;
+  --navbar-bg-contrast: hsl(0, 0%, 25%);
+  --navbar-height:64px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+* {
+  /* 
+  La propriété box-sizing va nous permettre d’indiquer que l’on souhaite inclure les marges internes et les bordures dans le calcul de la taille d’un élément. 
+
+  Nous allons pouvoir fournir l’un des mots clefs suivants à cette propriété :
+
+    content-box : valeur par défaut. Les dimensions définies pour l’élément vont s’appliquer à sa boite de contenu. Toute marge interne ou bordure ajoutées ensuite vont augmenter la taille de l’élément ;
+    
+    border-box : les dimensions définies pour l’élément vont s’appliquer à la boite contenant le contenu + le padding + les bordures. En ajoutant ou en augmentant la taille des marges internes ou des bordures, la taille de l’élément ne change pas mais son contenu sera compressé.
+
+  */  
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  background: #2f3238;
+  color: #7f8289;
+  font-size: 16px;
+  font-family: "Titillium Web", sans-serif;
+  line-height: 28px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7 {
+  margin: 0 0 20px;
+  color: #fff;
+  font-weight: 300;
+  font-family: "Titillium Web", sans-serif;
+  line-height: 1.5em;
+  text-shadow: 2px 2px #333;
+}
+h1 {
+  font-size: 48px;
+}
+h2 {
+  font-size: 36px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 20px;
+}
+h5 {
+  font-size: 18px;
+}
+h6 {
+  font-size: 16px;
+}
+h3.spec {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1em;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+h7 {
+  position:absolute; /*  */
+  left: 0;
+  bottom: 0;
+  width: 98%;
+  text-align: center;
+  color: #FFF;
+  font-size: 15px;
+  background-color:rgba(14, 14, 14, 0.466);
+  margin-left: 0.2em;
+  margin-bottom: 0;
+  font-weight: bold;
+
+}
+
+[class*="span"] {
+  float: left;
+  min-height: 1px;
+  margin-left: 20px;
+}
+
+main {
+  padding-top: 64px;
+}
+
+.mb-1 {
+  margin-bottom: 1em;
+}
+
+ 
+/* 
+  ######################################################################
+  TEXT  
+  ######################################################################  
+*/
+.title-page {
+  text-align: center;
+  padding-bottom: 1em;
+}
+.title-page .title {
+  font-size: 3.5em;
+  margin: 0 0 0.1em;
+}
+.title-description {
+  width: 99%;
+  font-size: 1.6em;
+  font-weight: 200;
+  text-align: justify;
+  margin: 0;
+  padding: 0 1em 0 1em;
+}
+
+
+.boutique-pres{
+  padding: 0;
+  margin: 0;
+  padding-top: 1em;
+}
+.boutique-pres .title-description{
+  text-align: center;
+}
+.default_backgroud_img {
+  border: 1px solid rgba(255, 255, 255, 0.541);
+  border-radius: 20px 20px 0 0;
+  max-height: 500px;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* 
+  ######################################################################
+  CONTACT  
+  ######################################################################  
+*/
+.container-contact {
+  background-color:#2F3238;
+  position:relative;
+  z-index:99
+ }
+ @media (min-width: 481px) and (max-width: 767px) {
+	.page {
+		margin-left: -20px;
+		margin-right: -20px;
+		padding-left: 20px;
+		padding-right: 20px;	
+	}  
+}
+.contact-details {
+  text-align: center;
+  margin-bottom: 100px;
+}
+.contact-details h3 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+/*
+ ######################################################################
+ Debut Gallery
+ ######################################################################
+*/
+.gallery {
+  padding: 0;
+  margin: 0;
+  background-color: #2F3238;
+  padding-top: 1em;
+  padding-bottom: 2em;
+}
+.bg-dark{
+  background-color: #26292E;;
+}
+.container-img {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+	width: 90%;
+  margin: auto;
+}
+.grid-item {
+  z-index: 1;
+  transform: translate3d(0px, 0px, 0px);
+}
+
+.grid-item img {
+	width: 100%;
+	height: auto;
+  padding: 0.2em;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.container-img span {
+
+  background-color:rgba(14, 14, 14, 0.466);
+  color: #fff;
+  font-weight: bold;
+
+  line-height: 30px;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  text-shadow: 2px 2px #333;
+
+  display:flex; /* permettre l'alignements des items */
+  position:relative; /* permettre d'effectuer un decalage ver le haut */
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* passer l'element en arierre plan */
+
+  height: 30px;
+  left: 0;
+  top: -30px; /* decalage ver le haut */
+
+  margin-bottom: -28px; /* ??????????? */
+}
+
+
+
+/*
+ ######################################################################
+ Debut FIXED TOP NAVBAR
+ ######################################################################
+*/
+
+#navbar {
+  --navbar-height: 64px; /* Initialisation variable */
+  position: fixed; /* fixer la navbar surviewport */
+  height: var(--navbar-height);
+  background-color: var(--navbar-bg-color);
+  left: 0;
+  right: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+}
+
+.navbar-container {
+  /* taille sidebar top 
+    aligner au centre en modifiant la largeur max
+
+    max-width: 1000px;
+  */
+  width: 98%;
+  padding: 0 1.4rem;
+  margin: 0 auto;  
+  display: flex; /* permettre l'alignements des items */
+  justify-content: space-between; /* centrer les element apres le logo du site */
+  height: 100%;
+  align-items: center; /* centrer les elements */
+}
+
+.navbar-item {
+  margin: 0.4em;
+  width: 100%;
+}
+
+.home-link,
+.navbar-link {
+  color: var(--navbar-text-color);
+  text-decoration: none;
+  display: flex;
+  font-weight: 400;
+  align-items: center;
+}
+
+.home-link:is(:focus, :hover) {
+  color: var(--navbar-text-color-focus);
+}
+
+.navbar-link {
+  justify-content: center;
+  width: 100%;
+  padding: 0.4em 0.8em;
+  border-radius: 5px;
+}
+
+.navbar-link:is(:focus, :hover) {
+  color: var(--navbar-text-color-focus);
+  background-color: var(--navbar-bg-contrast);
+}
+
+.navbar-logo {
+  background-color: var(--navbar-text-color-focus);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-inline-start: 0.5em;
+  margin-inline-end: 0.5em;
+}
+
+#navbar-toggle {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.icon-bar {
+  display: block;
+  width: 25px;
+  height: 4px;
+  margin: 2px;
+  background-color: var(--navbar-text-color);
+}
+
+#navbar-toggle:is(:focus, :hover) .icon-bar {
+  background-color: var(--navbar-text-color-focus);
+}
+
+#navbar-toggle[aria-expanded='true'] .icon-bar:is(:first-child, :last-child) {
+  position: absolute;
+  margin: 0;
+  width: 30px;
+}
+
+#navbar-toggle[aria-expanded='true'] .icon-bar:first-child {
+  transform: rotate(45deg);
+}
+
+#navbar-toggle[aria-expanded='true'] .icon-bar:nth-child(2) {
+  opacity: 0;
+}
+
+#navbar-toggle[aria-expanded='true'] .icon-bar:last-child {
+  transform: rotate(-45deg);
+}
+
+#navbar-menu {
+  
+  position: fixed;
+  top: var(--navbar-height);
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  left: 0;
+  right: 0;
+}
+
+#navbar-toggle[aria-expanded='true'] + #navbar-menu {
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar-links {
+ 
+  list-style: none;
+  position: absolute;
+  background-color: var(--navbar-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 0;
+  right: 0;
+  margin: 1.4rem;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  
+}
+
+#navbar-toggle[aria-expanded='true'] + #navbar-menu .navbar-links {
+  padding: 1em;
+}
+
+@media screen and (min-width: 700px) {
+  #navbar-toggle,
+  #navbar-toggle[aria-expanded='true'] {
+    display: none;
+  }
+
+  #navbar-menu,
+  #navbar-toggle[aria-expanded='true'] + #navbar-menu {
+    visibility: visible;
+    opacity: 1;
+    position: static;
+    display: block;
+    height: 100%;
+  }
+
+  .navbar-links,
+  #navbar-toggle[aria-expanded='true'] + #navbar-menu .navbar-links {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    position: static;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+  }
+}
+

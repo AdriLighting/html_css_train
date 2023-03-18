@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta keywords="">
+  <meta name="viewport" content="width=device=width , initial-scale=1.0">
+
+  <title>Site vitrine</title>
+
+  <!-- 
+    JavaScript Library 
+      jquery 
+  -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+  <!-- 
+    CSS framework 
+      Bootstrap https://getbootstrap.com/docs/5.3/getting-started/introduction/ 
+        v2.3.1 
+          Edited 180323 by Adri
+            .row
+            .container
+            .spanXX
+  -->
+  <link href="/asset/css/bootstrap.css" rel="stylesheet">
+
+  <!-- Bootstrap.js by @fat & @mdo -->
+  <!-- <script src="/asset/js/bootstrap.min.js"></script>   -->
+
+  <!-- 
+    CSS TOOLS
+      fancybox CSS 
+        https://fancyapps.com/fancybox/getting-started/ 
+  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+  
+
+  <!-- 
+    Internal CSS 
+  -->
+  <link rel="stylesheet" type="text/css" href="/asset/css/main.css">
+  
+
+
+  <!-- 
+    Responsive CSS framework 
+      Bootstrap https://getbootstrap.com/docs/5.3/getting-started/introduction/ 
+        v2.3.1 
+          Edited 180323 by Adri
+            .row
+            .container
+            .spanXX
+  -->
+  <link href="/asset/css/bootstrap.responsive.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="/asset/css/responsive.css">
+</head>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header id="navbar">
+    <!-- Fixed Top Navbar -->
+    <nav class="navbar-container">
+      <!-- Website logo -->
+      <a href="/" class="home-link">
+        <div class="navbar-logo"></div>
+        Website Name
+      </a>
+      <!-- Navbar Toggle link button -->
+      <button
+        type="button"
+        id="navbar-toggle"
+        aria-controls="navbar-menu"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- Navbar Links -->
+      <div id="navbar-menu" aria-labelledby="navbar-toggle">
+        <ul class="navbar-links">
+          <li class="navbar-item"><a class="navbar-link" href="/about">About</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/blog">Blog</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/careers">Careers</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- End Fixed Top Navbar -->
+  </header>
+  <!-- End HEADER -->
+
+  <main>
+    <!-- START SECTIONS -->
+    <!-- Shop presentation -->
+    <section class="boutique-pres bg-dark">
+      <div class="title-page">
+        <!-- Title -->
+        <h2 class="title">Effets & Matières</h2>
+        <!-- Banierre -->
+        <img
+        class="default_backgroud_img mb-1"
+        src="/asset/img/banierre.jpg"
+        alt="Default img"
+        />      
+        <!-- Title description -->    
+        <h3 class="title-description">
+          Boutique partagée de créateurs locaux<br>
+          Déco maison dans l'esprit du temps
+        </h3>
+      </div>
+    </section>
+    <!-- End Shop presentation -->
+    <!-- 
+      Section picture Gallery
+        class global pour une galeries photos 
+          titre
+          description
+          galeries photos
+    -->
+    <!-- creations -->
+    <section class="gallery">
+      <div class="title-page">
+        <!-- Title --> 
+        <h2 class="title">Lorem, ipsum.</h2>
+        <!-- Title description --> 
+        <h3 class="title-description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui laborum a magnam, deleniti commodi tempore possimus nam recusandae, ex at deserunt ab quisquam optio, quaerat corporis! Vitae quod officiis fugiat.
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores ex veniam quia dolore, nobis nihil aut dignissimos, tempore corrupti omnis vel? Vitae in magni minima aliquid atque tempora quam ea.
+          Est molestiae consequatur necessitatibus, beatae sequi explicabo reiciendis, laborum sunt repudiandae ut rerum ea eos iure distinctio dolores blanditiis dolor, voluptatum tempora aliquid reprehenderit nam iste quisquam debitis veritatis. Nemo.
+          Et eaque, earum adipisci deleniti pariatur necessitatibus nemo suscipit culpa, quasi corrupti aliquam, dolor mollitia officiis soluta. Minima quis veritatis qui ipsa unde nisi, aliquam eaque modi commodi, quae vero!
+          Facilis porro veniam corrupti et quae libero vitae, magni numquam amet possimus! Harum reprehenderit expedita excepturi provident officia veritatis at sapiente, facere culpa delectus non fuga consectetur aut adipisci. Alias!
+          Minima natus reiciendis eaque error! Deleniti, ut officiis obcaecati laboriosam voluptas nostrum sunt esse atque delectus inventore nisi veniam dolore, fuga doloribus! Consectetur corporis maiores quia libero, sint pariatur fugit.
+        </h3>
+      </div>
+      <!-- Shop Picture Gallery -->
+      <div class="container-img" id="section_creations">
+        <div id="gallery_creations_img_0" class="grid-item">
+          <a href="/asset/img/pa1.jpg" data-fancybox="gallery_creations" data-caption="Caption #1">
+            <img src="/asset/img/pa1_t.jpg" alt="pa1" />
+            <h7>L&eacute;gende en bas</h7>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- 
+      Section picture Gallery
+        class global pour une galeries photos 
+          titre
+          description
+          galeries photos
+    -->
+    <!-- ventes -->
+    <section class="gallery bg-dark">
+      <div class="title-page">
+        <!-- Title description --> 
+        <h2 class="title">Lorem, ipsum.</h2> 
+        <!-- Title --> 
+        <h3 class="title-description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui laborum a magnam, deleniti commodi tempore possimus nam recusandae, ex at deserunt ab quisquam optio, quaerat corporis! Vitae quod officiis fugiat.
+        </h3>
+      </div>
+      <!-- Shop Picture Gallery -->
+      <div class="container-img" id="section_ventes">
+        <div id="gallery_ventes_img_0" class="grid-item">
+          <a href="/asset/img/pa1.jpg" data-fancybox="gallery_ventes" data-caption="Caption #1">
+            <img src="/asset/img/pa1_t.jpg" alt="pa1" />
+            <h7>L&eacute;gende en bas</h7>
+          </a>
+          
+        </div>
+      </div>
+    </section>
+    <!-- 
+      Section contact
+    -->    
+    <section>
+      <div id="contact" class="container-contact">
+        <div class="container">
+          <div class="title-page">
+            <h2 class="title">Coordonnées</h2>
+            <h3 class="title-description">
+              Notre boutique est situé à Tournon sur Rhône, à 100 km au sud de Lyon. Pour tout renseignements, je vous invite à nous joindre à l'aide des informations suivantes. 
+            </h3>
+          </div>          
+          <div class="row">
+            <div class="span4">
+              <div class="contact-details">
+                <h3>Courriel</h3>
+                <a href="mailto:mail@mail.fr">mail@mail.fr</a>
+              </div>
+            </div>
+            <div class="span4">
+              <div class="contact-details">
+                <h3>Téléphone</h3>
+                (+33) 06 00 00 00 00
+              </div>
+            </div>
+            <div class="span4">
+              <div class="contact-details">
+                <h3>Adresse</h3>
+                13 Rue Thiers
+                <br>
+                07300 Tournon-sur-Rhône
+                <br>
+                FRANCE
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span6">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2817.9557456482735!2d4.8325853!3d45.0664088!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f54360a1674adb%3A0x2d76649aeee3a460!2sEffets%20Et%20Mati%C3%A8res%20Boutique%20de%20Cr%C3%A9ateurs!5e0!3m2!1sfr!2sfr!4v1679133024257!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>    
+          </div>    
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 
+    fancybox Javascript 
+      https://fancyapps.com/fancybox/getting-started/ 
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+  <!-- 
+    Internal Javascript 
+  -->
+  <script src="/asset/js/index.js"></script>
+
+  <script></script>  
+
+</body>
+
+</html>
