@@ -69,22 +69,18 @@
 
 <body>
   <!-- HEADER -->
-  <header id="navbar">
+  <header >
+    <img class="default_backgroud_img br-no" src="/asset/img/banierre_logo.jpg" alt="Default img"/>
+    <h1 style="display: none;">La Boutique Effets & Matières</h1>  
+  </header>
+  <!-- End HEADER -->
+
     <!-- Fixed Top Navbar -->
-    <nav class="navbar-container">
+    <nav class="navbar-container" id="navbar">
       <!-- Website logo -->
-      <a href="/" class="home-link">
-        <div class="navbar-logo"></div>
-        <!-- Website Name -->
-      </a>
+      <div id="navbar-logo" class="navbar-logo" link-position="boutique 200"></div>
       <!-- Navbar Toggle button -->
-      <button
-        type="button"
-        id="navbar-toggle"
-        aria-controls="navbar-menu"
-        aria-label="Toggle menu"
-        aria-expanded="false"
-      >
+      <button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu" aria-expanded="false">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -92,17 +88,13 @@
       <!-- Navbar Links -->
       <div id="navbar-menu" aria-labelledby="navbar-toggle">
         <ul class="navbar-links">
-          <li class="navbar-item"><a class="navbar-link" href="#boutique">About</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="#contact">Contact</a></li>
+          <li class="navbar-item"><a id="navbar-links-shop" class="navbar-link"  link-position="boutique 200">About</a></li>
+          <li class="navbar-item"><a id="navbar-links-contact" class="navbar-link"  link-position="contact 200">Contact</a></li>
         </ul>
       </div>
     </nav>
     <!-- End Fixed Top Navbar -->
-  </header>
-  <!-- End HEADER -->
-
   <main>
-
     <!-- START SECTIONS -->
 
     <!-- Shop -->
@@ -111,11 +103,7 @@
         <!-- Title -->
         <h2 class="title">Effets & Matières</h2>
         <!-- Banierre -->
-        <img
-        class="default_backgroud_img mb-01e"
-        src="/asset/img/banierre.jpg"
-        alt="Default img"
-        />      
+        <img class="default_backgroud_img mb-01e" src="/asset/img/banierre.jpg" alt="Default img"/>      
         <!-- Title description -->    
         <h3 class="title-description">
           Boutique partagée de créateurs locaux<br>
@@ -152,13 +140,6 @@
       </div>
     </section>
 
-    <!-- 
-      Section picture Gallery
-        class global pour une galeries photos 
-          titre
-          description
-          galeries photos
-    -->
     <!-- Pictures gallery_2 -->
     <section id="gallery_2" class="gallery bg-dark">
       <div class="title-page">
@@ -188,8 +169,8 @@
     <!-- 
       Section contact
     -->    
-    <section>
-      <div id="contact" class="container-contact">
+    <section id="contact">
+      <div class="container-contact">
         <div class="container">
           <div class="title-page">
             <h2 class="title">Coordonnées</h2>
