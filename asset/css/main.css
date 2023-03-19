@@ -15,8 +15,6 @@
   --navbar-height:64px;
 }
 
-
-
 * {
   /* 
   La propriété box-sizing va nous permettre d’indiquer que l’on souhaite inclure les marges internes et les bordures dans le calcul de la taille d’un élément. 
@@ -48,6 +46,11 @@ body {
   font-family: "Titillium Web", "Helvetica", "sans-serif";
   line-height: 28px;
 }
+
+main {
+  padding-top: 137px;
+}
+
 
 h1,
 h2,
@@ -114,10 +117,6 @@ h7 {
   float: left;
   min-height: 1px;
   margin-left: 20px;
-}
-
-main {
-  padding-top: 64px;
 }
 
 
@@ -192,10 +191,14 @@ main {
   border-radius: 20px 20px 0 0;
   max-height: 500px;
   height: auto;
-  object-fit: cover;
+  object-fit:cover;
   width: 100%;
 }
+.br-no{border-radius: 0px 0px 0px 0px;}
 
+.boutique-pres > .title-page > h2 {
+  display: none;
+}
 /* 
   ######################################################################
   CONTACT  
@@ -368,6 +371,14 @@ position et les propriétés CSS display et float
  FIXED TOP NAVBAR
  ######################################################################
 */
+header {
+  display: flex;
+  position: fixed; /* fixer la navbar surviewport */
+  left: 0;
+  right: 0;
+  z-index: 3;
+  height: 12%;
+}
 
 #navbar {
   --navbar-height: 64px; /* Initialisation variable */
@@ -376,8 +387,9 @@ position et les propriétés CSS display et float
   background-color: var(--navbar-bg-color);
   left: 0;
   right: 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.589);
   z-index: 20;
+  top: 12%;
 }
 
 .navbar-container {
@@ -386,9 +398,9 @@ position et les propriétés CSS display et float
 
     max-width: 1000px;
   */
-  width: 98%;
-  padding: 0 1.4rem;
-  margin: 0 auto;  
+  width: 100%;
+  padding: 0 1em 0 1em;
+  margin: 0;  
   display: flex; /* permettre l'alignements des items */
   justify-content: space-between; /* centrer les element apres le logo du site */
   height: 100%;
@@ -396,8 +408,9 @@ position et les propriétés CSS display et float
 }
 
 .navbar-item {
-  margin: 0.4em;
-  width: 100%;
+  margin: 0.3em;
+  width: 90%;
+  /* border: 1px solid lightgray; */
 }
 
 .home-link,
@@ -407,6 +420,7 @@ position et les propriétés CSS display et float
   display: flex;
   font-weight: 400;
   align-items: center;
+  cursor: pointer;
 }
 
 .home-link:is(:focus, :hover) {
@@ -426,6 +440,7 @@ position et les propriétés CSS display et float
 }
 
 .navbar-logo {
+  transition: 650ms;
   background-color: var(--navbar-text-color-focus);
   background-image: url("/asset/img/logo.jpg");
   border-radius: 50%;
@@ -433,6 +448,7 @@ position et les propriétés CSS display et float
   height: 30px;
   margin-inline-start: 0.5em;
   margin-inline-end: 0.5em;
+  cursor: pointer;
 }
 
 /*
