@@ -1,3 +1,38 @@
+function set_link() {
+  var z, i, elmnt, file;
+
+  z = document.getElementsByTagName("*");
+
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    file = elmnt.getAttribute("link-position");
+    
+    if(file){
+      console.log(elmnt)
+
+      let split = file.split(" ");
+
+      document.getElementById(elmnt.id).addEventListener("click", () => {
+          let pos = document.getElementById(split[0]).offsetTop;
+          
+          window.scroll({
+            top: pos - split[1] ,
+            left: 0,
+            behavior: 'smooth'
+          })
+
+          let navbarToggle = navbar.querySelector('#navbar-toggle');
+          let isNavbarExpanded = navbarToggle.getAttribute('aria-expanded') === 'true';
+          if (isNavbarExpanded) toggleNavbarVisibility();
+
+        });
+      
+        elmnt.removeAttribute("link-position");
+      
+    }
+  }
+}
+
 const navbarToggle = navbar.querySelector('#navbar-toggle');
 let isNavbarExpanded = navbarToggle.getAttribute('aria-expanded') === 'true';
 
@@ -14,6 +49,7 @@ const navbarLinksContainer = navbarMenu.querySelector('.navbar-links');
 navbarLinksContainer.addEventListener('click', (e) => e.stopPropagation());
 navbarMenu.addEventListener('click', toggleNavbarVisibility);
 
+
 $(document).ready(function () {
   for (let index = 0; index < 7; index++) {
     var c2 = $('#gallery_creations_img_0').clone();
@@ -27,9 +63,6 @@ $(document).ready(function () {
     c2.find('h7').html('Photos #'+ (index + 2) );   //
     c2.appendTo('#gallery_creations');
   }
-});
-
-$(document).ready(function () {
   for (let index = 0; index < 4; index++) {
     var c2 = $('#gallery_other_img_0').clone();
     c2.attr('id', 'gallery_other_img_' + (index + 1));        // modifiy dom attribut
@@ -42,8 +75,9 @@ $(document).ready(function () {
     c2.find('h7').html('Photos #'+ (index + 2) );   //
 
     c2.appendTo('#gallery_other');
-  }
+  }  
 });
+
 
 Fancybox.bind('[data-fancybox="gallery_creations"]', {
   //
@@ -51,4 +85,6 @@ Fancybox.bind('[data-fancybox="gallery_creations"]', {
 Fancybox.bind('[data-fancybox="gallery_other"]', {
   //
 });   
+
+set_link();
 
