@@ -193,6 +193,7 @@ h7 {
   height: auto;
   object-fit:cover;
   width: 100%;
+  background-color: #000000;
 }
 .br-no{border-radius: 0px 0px 0px 0px;}
 
@@ -303,7 +304,7 @@ Conditions d'animation de translate3d() en CSS3.
   La CSS translate3d() est une fonction de feuille de style qui peut être utilisée pour les animations CSS et transitions CSS.
 */
   transform: translate3d(0px, 0px, 0px);
-  margin: 0 0.2em 0 0;
+  margin: 0 0.4em 0 0;
 }
 .grid-item img {
 	width: 100%;
@@ -377,7 +378,7 @@ header {
   left: 0;
   right: 0;
   z-index: 3;
-  height: 12%;
+  height: 13%;
 }
 
 #navbar {
@@ -389,7 +390,7 @@ header {
   right: 0;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.589);
   z-index: 20;
-  top: 12%;
+  top: 12.5%;
 }
 
 .navbar-container {
@@ -442,7 +443,7 @@ header {
 .navbar-logo {
   transition: 650ms;
   background-color: var(--navbar-text-color-focus);
-  background-image: url("/asset/img/logo.jpg");
+  background-image: url("../../asset/img/logo.jpg");
   border-radius: 50%;
   width: 150px;
   height: 30px;

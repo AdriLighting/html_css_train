@@ -56,9 +56,9 @@ $(document).ready(function () {
     c2.attr('id', 'gallery_creations_img_' + (index + 1));        // modifiy dom attribut
     c2.attr('title', 'gallery_creations_img_' + (index + 1));
     c2.attr('name', 'gallery_creations_img_' + (index + 1));
-    c2.find('img').attr('src', '/asset/img/g1_t/g1_'+ (index + 3)+'.jpg' );   //
+    c2.find('img').attr('src', 'asset/img/g1_t/g1_'+ (index + 3)+'.jpg' );   //
     c2.find('img').attr('alt', 'Photos #'+ (index + 2) );   //
-    c2.find('a').attr('href', '/asset/img/g1/g1_'+ (index + 3)+'.jpg' );   //
+    c2.find('a').attr('href', 'asset/img/g1/g1_'+ (index + 3)+'.jpg' );   //
     c2.find('a').attr('data-caption', 'Photos #'+ (index + 2) );   //
     c2.find('h7').html('Photos #'+ (index + 2) );   //
     c2.appendTo('#gallery_creations');
@@ -68,9 +68,9 @@ $(document).ready(function () {
     c2.attr('id', 'gallery_other_img_' + (index + 1));        // modifiy dom attribut
     c2.attr('title', 'gallery_other_img_' + (index + 1));
     c2.attr('name', 'gallery_other_img_' + (index + 1));
-    c2.find('img').attr('src', '/asset/img/g2_t/g2_'+ (index + 2)+'.jpg' );   //
+    c2.find('img').attr('src', 'asset/img/g2_t/g2_'+ (index + 2)+'.jpg' );   //
     c2.find('img').attr('alt', 'Photos #'+ (index + 2));   //
-    c2.find('a').attr('href', '/asset/img/g2/g2_'+ (index + 2)+'.jpg' );   //
+    c2.find('a').attr('href', 'asset/img/g2/g2_'+ (index + 2)+'.jpg' );   //
     c2.find('a').attr('data-caption', 'Photos #'+ (index + 2) );   //
     c2.find('h7').html('Photos #'+ (index + 2) );   //
 
