@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Cours JavaScript</title>
-        <meta charset="utf-8">
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-        <link rel="icon" type="image/png" href="https://www.emmanuel-kawala.com/favicon.png" />
-    </head>
+  <head>
+    <title>Cours JavaScript</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </head>
     
-    <body>
-        <h1>Titre principal</h1>
-        <p>Un premier paragraphe</p>
-    </body>
-    <script>
+  <body>
+      <h1>Titre principal</h1>
+      <p>Un premier paragraphe</p>
+  </body>
+  <script>
+
       /*
       TEST SIMPLE FUNCTION
 
@@ -98,6 +98,7 @@ async function parallel() {
   console.log("==PARALLEL with await Promise.all END==");
 }
 
+
 /*
 FOREACH LOOP
   array.forEach(element => {});
@@ -116,19 +117,28 @@ Mais cela ne fonctionnera pas avec les boucles qui nécessitent un rappel.
   Des exemples de ces boucles qui nécessitent un rappel incluent 
     forEach, map, filter et reduce. 
 */
+const sleep_2 = (ms, pos) => {
+  console.log("starting slow promise", ms, pos);
+  return new Promise((resolve) => {
+    setTimeout( async () => {
+      // coment lancer une fonction avec callback et resolve sleep_2 depuis ce callback ????
+      resolve(pos);
+    }, ms);
+  });
+}
 const sleep = ms => {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
-
-const loopAfter2Seconds = async (p1) =>{
-  console.log("starting loopAfter2Seconds");
+const loopAfter2Seconds =  (p1) =>{
+  console.log("starting loopAfter2Seconds", p1.pos);
   return sleep(4000).then(async _ => {
     const slow = resolveAfter2Seconds(); 
     await slow.then(s=>{console.log({resolveAfter2Seconds:s});})  
     return p1;
   })
 }
-const loop = async _ => {
+
+(async function() {
   let array_1 = [];
   array_1.push({pos:1});
   array_1.push({pos:2});
@@ -137,13 +147,12 @@ const loop = async _ => {
   array_1.push({pos:5});
   for (let index = 0; index < array_1.length; index++) {
     const element = array_1[index];
-    const numFruit = await loopAfter2Seconds(element);
-    console.log(numFruit);
+    await sleep_2(2000, element.pos).then(async s => {console.log(s)});
   }
-}
-loop();
+})()
+// loop();
 
 
-    </script>
+  </script>
 </html>
 
