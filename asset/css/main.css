@@ -139,7 +139,44 @@ h7 {
   vertical-align: middle;
 }
 
+.container {
+  margin-right:auto;
+  margin-left:auto;
+  *zoom:1
+}
+.container:before,
+.container:after {
+  display:table;
+  line-height:0;
+  content:""
+}
+.container {
+  width:940px
+}
+.row {
+  margin-left:-20px;
+  *zoom:1
+}
+.row:before,
+.row:after {
+  display:table;
+  line-height:0;
+  content:""
+}
+.row:after {
+  clear:both
+}
+[class*="span"] {
+  float:left;
+  min-height:1px;
+  margin-left:20px
+}
+.span4 {
+  width:300px
+ }
 
+
+ 
 /* 
   ######################################################################
   TEXT  
