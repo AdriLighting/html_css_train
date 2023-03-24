@@ -102,6 +102,7 @@ function set_colors() {
   document.documentElement.style.setProperty('--color-container-img-bg', 'rgba(14, 14, 14, 0.466)');
   document.documentElement.style.setProperty('--color-container-img', '#fff');
   document.documentElement.style.setProperty('--color-container-contact', '#fff');
+  document.documentElement.style.setProperty('--color-container-contact-hover', '#fff');
 }
 function set_colors_2(){
 /*   const element = document.querySelectorAll('h7');
