@@ -88,3 +88,35 @@ Fancybox.bind('[data-fancybox="gallery_other"]', {
 
 set_link();
 
+function set_colors() {
+  document.documentElement.style.setProperty('--contact-bg-light', '#7e7d7d0c');
+  document.documentElement.style.setProperty('--contact-details-bg-light', '#7e7d7d1c');
+  document.documentElement.style.setProperty('--bg-dark', '#26292E');
+  document.documentElement.style.setProperty('--color-body-bg', '#2f3238');
+  document.documentElement.style.setProperty('--color-body', '#7f8289');
+  document.documentElement.style.setProperty('--color-hx', '#fff');
+  document.documentElement.style.setProperty('--color-h7', '#fff');
+  document.documentElement.style.setProperty('--color-h7-bg', 'rgba(14, 14, 14, 0.466)');
+  document.documentElement.style.setProperty('--color-footer-bg', '#00000075');
+  document.documentElement.style.setProperty('--color-container-contact-bg', '#2F3238');
+  document.documentElement.style.setProperty('--color-container-img-bg', 'rgba(14, 14, 14, 0.466)');
+  document.documentElement.style.setProperty('--color-container-img', '#fff');
+  document.documentElement.style.setProperty('--color-container-contact', '#fff');
+}
+function set_colors_2(){
+/*   const element = document.querySelectorAll('h7');
+  element.style.textShadow  = '0px 0px #0';   */
+
+  var divs = document.getElementsByTagName("h3");  // Access all <H1> present in your body.
+  for(var i = 0; i < divs.length; i++) {   //divs.length contain number of <h1> elements
+    var div = divs[i];                     // Now access Each <H1> one-by-one
+    div.style.textShadow = '0 0';             // Set Color Style of each <h1>
+  }
+  var divs = document.getElementsByTagName("h2");  // Access all <H1> present in your body.
+  for(var i = 0; i < divs.length; i++) {   //divs.length contain number of <h1> elements
+    var div = divs[i];                     // Now access Each <H1> one-by-one
+    div.style.textShadow = '0 0';             // Set Color Style of each <h1>
+  }  
+}
+
+set_colors_2();

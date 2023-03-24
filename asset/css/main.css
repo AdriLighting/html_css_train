@@ -13,6 +13,24 @@
   --navbar-text-color-focus: white;
   --navbar-bg-contrast: hsl(0, 0%, 25%);
   --navbar-height:64px;
+
+  --contact-bg-light:#7e7d7d0c;
+  --contact-details-bg-light:#7e7d7d1c;
+
+  --bg-dark:#26292E;
+
+  --color-body-bg:#ffffff;
+  --color-body:#242424;
+  --color-hx:#000000;
+  --color-h7:#fff;
+  --color-h7-bg:rgba(14, 14, 14, 0.466);
+  --color-footer-bg:#00000075;
+  --color-container-contact-bg:#2F3238;
+  --color-container-img-bg:rgba(14, 14, 14, 0.466);
+  --color-container-img:#fff;
+
+  --color-container-contact:#fff;
+  
 }
 
 * {
@@ -40,8 +58,8 @@ html {
 }
 
 body {
-  background: #2f3238;
-  color: #7f8289;
+  background: var(--color-body-bg);
+  color: var(--color-body);
   font-size: 16px;
   font-family: "Titillium Web", "Helvetica", "sans-serif";
   line-height: 28px;
@@ -49,6 +67,7 @@ body {
 
 main {
   padding-top: 137px;
+  padding-bottom: 1em;
 }
 
 
@@ -60,7 +79,7 @@ h5,
 h6,
 h7 {
   margin: 0 0 20px;
-  color: #fff;
+  color: var(--color-hx);
   font-weight: 300;
   font-family: "Titillium Web", sans-serif;
   line-height: 1.5em;
@@ -104,10 +123,10 @@ h7 {
   bottom: 0;
   width: 100%;
   text-align: center;
-  color: #FFF;
+  color: var(--color-h7);
   font-size: 15px;
-  background-color:rgba(14, 14, 14, 0.466);
-
+  background-color:var(--color-h7-bg);
+  
   margin-bottom: 8px;
   font-weight: bold;
 
@@ -125,13 +144,13 @@ h7 {
 .mb-1e {margin-bottom: 1em;}
 .mt-1e {margin-top: 1em;}
 .mt-2e {margin-top: 2em;}
-.bg-dark {background-color: #26292E;}
-.bg-light {background-color: #7e7d7d23;}
+.bg-dark {background-color: var(--bg-dark);}
+.bg-light {background-color: var(--contact-bg-light);}
 .pad-1e {padding: 1em;}
 .tc{text-align:center;}
 
 .footer-p {
-  background-color: #00000075;
+  background-color: var(--color-footer-bg);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -142,7 +161,8 @@ h7 {
 .container {
   margin-right:auto;
   margin-left:auto;
-  *zoom:1
+  *zoom:1;
+  
 }
 .container:before,
 .container:after {
@@ -173,6 +193,7 @@ h7 {
 }
 .span4 {
   width:300px
+  
  }
 
 
@@ -243,23 +264,55 @@ h7 {
   ######################################################################  
 */
 .container-contact {
-  background-color:#2F3238;
+  background-color:var(--color-container-contact-bg);
   z-index:1
  }
 
 .container-contact .container .span4 {
   border-radius: 20px 20px 20px 20px;  
 }
+.container-googlemap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px 20px 20px 20px;  
+  width: 66%;
+  transition: 650ms;
+
+}
+.container-googlemap iframe {
+  transition: 650ms;
+  border-radius: 20px 20px 20px 20px; 
+  border: #0000003d 2px solid;
+  box-shadow: 2px 2px 2px #00000065;
+}
+.container-contact a {
+  text-decoration: none;
+  color: inherit;
+}
+.container-contact a:hover {
+  color: var(--color-container-contact);
+  text-decoration: underline;
+}
+.contact-details p:hover{
+  color: var(--color-container-contact);
+}
+
 
 .contact-details {
   text-align: center;
   height: 10em;
+  padding: 1em;
+  background-color: var(--contact-details-bg-light);
+  border-radius: 20px 20px 20px 20px; 
+  border: #0000003d 2px solid;
+  box-shadow: 2px 2px 2px #00000065;  
 }
 .contact-details h3 {
-  color: #fff;
+  color: var(--color-container-contact);
   font-size: 24px;
   font-weight: 300;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   line-height: 1em;
   text-transform: uppercase;
 }
@@ -352,8 +405,8 @@ Conditions d'animation de translate3d() en CSS3.
 
 .container-img span {
 
-  background-color:rgba(14, 14, 14, 0.466);
-  color: #fff;
+  background-color:var(--color-container-img-bg);
+  color: var(--color-container-img);
   font-weight: bold;
 
   line-height: 30px;
@@ -402,24 +455,7 @@ position et les propriétés CSS display et float
   margin-bottom: -28px; /* ??????????? */
 }
 
-.container-contact iframe {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0 2em 1em;
-}
-.container-contact a {
-  text-decoration: none;
-  color: inherit;
-}
-.container-contact a:hover {
-  color: white;
-  text-decoration: underline;
-}
-.contact-details p:hover{
-  color: white;
-}
+
 /*
  ######################################################################
  FIXED TOP NAVBAR
