@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
 
 /* 
   navbar
@@ -7,227 +7,184 @@
     Réinitialisations CSS standard et le style de base
 */
 :root {
-  --navbar-bg-color: #000000;
-  /* --navbar-bg-color: hsl(0, 0%, 15%); */
-  --navbar-text-color: hsl(0, 0%, 85%);
-  --navbar-text-color-focus: white;
-  --navbar-bg-contrast: hsl(0, 0%, 25%);
-  --navbar-height:64px;
-
-  --contact-bg-light:#d819190c;
-  --contact-details-bg-light:#7e7d7d1c;
-
-  --bg-dark:#cccccc;
-
-  --color-body-bg:#ffffff;
-  --color-body:#09003a;
-  --color-hx:#09003a;
-  --color-h7:#fefeff;
-  --color-h7-bg:rgba(14, 14, 14, 0.466);
-  --color-footer-bg:#00000075;
-  --color-container-contact-bg:#cccccc;
-  --color-container-img-bg:rgba(14, 14, 14, 0.466);
-  --color-container-img:#09003a;
-
-  --color-container-contact:#09003a;
-  --color-container-contact-hover:#000000;
+	--navbar-bg-color: #000000;
+	/* --navbar-bg-color: hsl(0, 0%, 15%); */
+	--navbar-text-color: hsl(0, 0%, 85%);
+	--navbar-text-color-focus: white;
+	--navbar-bg-contrast: hsl(0, 0%, 25%);
+	--navbar-height: 64px;
+	--bg-dark: #dfdede48;
+	--color-body-bg: #ffffff;
+	--color-body: #09003a;
+	--color-hx: #09003a;
+	--color-h7: #fefeff;
+	--color-h7-bg: rgba(155, 155, 155, 0.466);
+	--color-footer-bg: #00000075;
+	--color-container-contact-bg: #cccccc;
+	--contact-bg-light: #ffffff0c;
+	--color-container-img-bg: rgba(14, 14, 14, 0.466);
+	--color-container-img: #09003a;
+	--color-container-contact-bg-light: #d6d6d623;
+	--color-container-contact: #09003a;
+	--color-container-contact-2: #adadad;
+	--color-container-contact-hover: #000000;
+	--color-container-contact-shadow: 2px 2px 2px #000000c4;
 }
 
 * {
-  /* 
-  La propriété box-sizing va nous permettre d’indiquer que l’on souhaite inclure les marges internes et les bordures dans le calcul de la taille d’un élément. 
-
-  Nous allons pouvoir fournir l’un des mots clefs suivants à cette propriété :
-
-    content-box : valeur par défaut. Les dimensions définies pour l’élément vont s’appliquer à sa boite de contenu. Toute marge interne ou bordure ajoutées ensuite vont augmenter la taille de l’élément ;
-    
-    border-box : les dimensions définies pour l’élément vont s’appliquer à la boite contenant le contenu + le padding + les bordures. En ajoutant ou en augmentant la taille des marges internes ou des bordures, la taille de l’élément ne change pas mais son contenu sera compressé.
-
-  */  
-  box-sizing: border-box; 
-
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
+
 
 html {
-  width: 100%;
-  font-size: 100%;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+	width: 100%;
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
 }
-
-body {
-  background: var(--color-body-bg);
-  color: var(--color-body);
-  font-size: 16px;
-  font-family: "Titillium Web", "Helvetica", "sans-serif";
-  line-height: 28px;
+header {
+	display: flex;
+	position: fixed; /* fixer la navbar surviewport */
+	left: 0;
+	right: 0;
+	z-index: 3;
+	height: 13%;
 }
-
 main {
-  padding-top: 137px;
-  padding-bottom: 1em;
+	position: absolute;
+	padding: 0;
+	margin: 0;  
+	left: 0;
+	/* top: 0; */
+	/* padding-top: 180px; */
+  top: 20.8%;
+}
+body {
+	background: var(--color-body-bg);
+	color: var(--color-body);
+	font-size: 16px;
+	font-family: "Titillium Web", "Helvetica", "sans-serif";
+	line-height: 28px;
+	
 }
 
+
+.footer-p {
+	background-color: var(--color-footer-bg);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	vertical-align: middle;
+}
 
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-h7 {
-  margin: 0 0 20px;
-  color: var(--color-hx);
-  font-weight: 300;
-  font-family: "Titillium Web", sans-serif;
-  line-height: 1.5em;
-  text-shadow: 2px 2px #333;
+h6 {
+	margin: 0 0 20px;
+	color: var(--color-hx);
+	font-weight: 300;
+	font-family: "Montserrat", "Titillium Web", sans-serif;
+	line-height: 1.5em;
+	/* text-shadow: 2px 2px #333; */
 }
 h1 {
-  font-size: 48px;
+	font-size: 48px;
 }
 h2 {
-  font-size: 36px;
+	font-size: 36px;
 }
 h3 {
-  font-size: 24px;
+	font-size: 24px;
 }
 h4 {
-  font-size: 20px;
+	font-size: 20px;
 }
 h5 {
-  font-size: 18px;
+	font-size: 18px;
 }
 h6 {
-  font-size: 16px;
+	font-size: 16px;
 }
 h3.spec {
-  color: #fff;
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 1em;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-
-}
-h7 {
-  /*
-    Un élément positionné avec position: 
-      absolute va être positionné par rapport à son parent le plus proche positionné (avec une valeur de position différente de static).  
-    Le point de référence pour les propriétés top, left, bottom et right va ainsi être le côté de l’élément parent liée à la propriété (côté gauche pour left, supérieur pour top , etc.).       
-  */
-  position:absolute; /* fair en sorte d'avoit un tooltip au bas de l'image */
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  color: var(--color-h7);
-  font-size: 15px;
-  background-color:var(--color-h7-bg);
-  
-  margin-bottom: 8px;
-  font-weight: bold;
-
+	color: #fff;
+	font-size: 24px;
+	font-weight: 300;
+	line-height: 1em;
+	margin-bottom: 30px;
+	text-transform: uppercase;
 }
 
+
+.mb-01e {
+	margin-bottom: 0.1em;
+}
+.mb-1e {
+	margin-bottom: 1em;
+}
+.mt-1e {
+	margin-top: 1em;
+}
+.mt-2e {
+	margin-top: 2em;
+}
+.bg-dark {
+	background-color: var(--bg-dark);
+}
+.bg-light {
+	background-color: var(--contact-bg-light);
+}
+.pad-1e {
+	padding: 1em;
+}
+.tc {
+	text-align: center;
+}
+
+
+/*
 [class*="span"] {
-  float: left;
-  min-height: 1px;
-  margin-left: 20px;
+	float: left;
+	min-height: 1px;
+	margin-left: 20px;
 }
+*/
 
-
-
-.mb-01e {margin-bottom: 0.1em;}
-.mb-1e {margin-bottom: 1em;}
-.mt-1e {margin-top: 1em;}
-.mt-2e {margin-top: 2em;}
-.bg-dark {background-color: var(--bg-dark);}
-.bg-light {background-color: var(--contact-bg-light);}
-.pad-1e {padding: 1em;}
-.tc{text-align:center;}
-
-.footer-p {
-  background-color: var(--color-footer-bg);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.container {
-  margin-right:auto;
-  margin-left:auto;
-  *zoom:1;
-  
-}
-.container:before,
-.container:after {
-  display:table;
-  line-height:0;
-  content:""
-}
-.container {
-  width:940px
-}
-.row {
-  margin-left:-20px;
-  *zoom:1
-}
-.row:before,
-.row:after {
-  display:table;
-  line-height:0;
-  content:""
-}
-.row:after {
-  clear:both
-}
-[class*="span"] {
-  float:left;
-  min-height:1px;
-  margin-left:20px
-}
-.span4 {
-  width:300px
-  
- }
-
-
- 
 /* 
   ######################################################################
   TEXT  
   ######################################################################  
 */
 .title-page {
-  text-align: center;
-  padding-bottom: 1em;
+	text-align: center;
+	padding-bottom: 1em;
 }
 .title-page .title {
-  font-size: 3.5em;
-  margin: 0 0 0.1em;
-  text-shadow: 2px 2px #000000;
+	font-size: 3.2em;
+	margin: 0 0 0.1em;
+	/* text-shadow: 2px 2px #000000; */
 }
 .title-description {
-  width: 99%;
-  font-size: 1.6em;
-  font-weight: 200;
-  text-align: justify;
-  margin: 0;
-  padding: 0 1em 0 1em;
-  
+	width: 99%;
+	font-size: 1.4em;
+	font-weight: 200;
+	text-align: justify;
+	margin: 0;
+	padding: 0 .5em 0 .5em;
 }
 
-#gallery_2 .title-description  {
-  text-align:center;
+#gallery_2 .title-description {
+	text-align: center;
 }
-#gallery_1 .title-description  {
-  text-align:center;
+#gallery_1 .title-description {
+	text-align: center;
 }
+
 
 
 /* 
@@ -235,88 +192,117 @@ h7 {
   SHOP  
   ######################################################################  
 */
-.boutique-pres{
-  padding: 0;
-  margin: 0;
-  padding-top: 1em;
+.boutique-pres {
+	padding: 0;
+	margin: 0;
+  max-height: 645px;
 }
-.boutique-pres .title-description{
-  text-align: center;
+.boutique-pres .title-description {
+	text-align: center;
 }
 .default_backgroud_img {
-  transition-duration: 650ms;
-  border: 1px solid rgba(255, 255, 255, 0.541);
-  border-radius: 20px 20px 0 0;
-  max-height: 500px;
-  height: auto;
-  object-fit:cover;
-  width: 100%;
-  background-color: #000000;
+	transition-duration: 650ms;
+	border: 1px solid rgba(255, 255, 255, 0.541);
+	border-radius: 20px 20px 0 0;
+	max-height: 500px;
+	height: auto;
+	object-fit: cover;
+	width: 100%;
+	background-color: transparent;
 }
-.br-no{border-radius: 0px 0px 0px 0px;}
+.br-no {
+	border-radius: 0px 0px 0px 0px;
+}
 
 .boutique-pres > .title-page > h2 {
-  display: none;
+	display: none;
 }
+
 /* 
   ######################################################################
   CONTACT  
   ######################################################################  
 */
 .container-contact {
-  background-color:var(--color-container-contact-bg);
-  z-index:1
- }
+	/* background-color: var(--color-container-contact-bg); */
+	padding: 0;
+	margin: 0;
+	z-index: 1;
+}
 
-.container-contact .container .span4 {
-  border-radius: 20px 20px 20px 20px;  
-}
-.container-googlemap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 20px 20px 20px 20px;  
-  width: 66%;
-  transition: 650ms;
-
-}
-.container-googlemap iframe {
-  transition: 650ms;
-  border-radius: 20px 20px 20px 20px; 
-  border: #0000003d 2px solid;
-  box-shadow: 2px 2px 2px #00000065;
-}
 .container-contact a {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 .container-contact a:hover {
-  color: var(--color-container-contact-hover);
-  text-decoration: underline;
-}
-.contact-details p:hover{
-  color: var(--color-container-contact-hover);
+	color: var(--color-container-contact-hover);
+	text-decoration: underline;
 }
 
+.container-contact .row {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding-bottom: 0.4em;
+}
+
+.container-contact-details {
+	width: 350px;
+	border-radius: 20px 20px 20px 20px;
+	padding: 0.4em;
+}
 
 .contact-details {
-  text-align: center;
-  height: 10em;
-  padding: 1em;
-  background-color: var(--contact-details-bg-light);
-  border-radius: 20px 20px 20px 20px; 
-  border: #0000003d 2px solid;
-  box-shadow: 2px 2px 2px #00000065;  
-}
-.contact-details h3 {
-  color: var(--color-container-contact);
-  font-size: 24px;
-  font-weight: 300;
-  margin-bottom: 20px;
-  line-height: 1em;
-  text-transform: uppercase;
+	text-align: center;
+	height: 10em;
+	background-color: var(--color-container-contact-bg-light);
+	border-radius: 20px 20px 20px 20px;
+	border: #0000005d 0.1px solid;
+	box-shadow: var(--color-container-contact-shadow);
+	padding: 1em;
 }
 
+.contact-details h3 {
+	color: var(--color-container-contact);
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 15px;
+	line-height: 1em;
+	text-transform: uppercase;
+}
+
+.contact-details p {
+	color: var(--color-container-contact-2);
+}
+.contact-details p:hover {
+	color: var(--color-container-contact-hover);
+}
+
+.contact-details a {
+	color: var(--color-container-contact-2);
+}
+
+.container-googlemap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px 20px 20px 20px;
+	width: 60%;
+	transition: 650ms;
+	margin: 0 auto auto auto;
+	padding: 0 0.4em 1em 0.4em;
+}
+.container-googlemap iframe {
+	transition: 650ms;
+	border-radius: 20px 20px 20px 20px;
+	border: #0000003d 2px solid;
+	box-shadow: var(--color-container-contact-shadow);
+	width: 100%;
+	height: 380px;
+}
 
 /*
  ######################################################################
@@ -325,252 +311,187 @@ h7 {
 */
 
 .gallery {
-  padding: 0;
-  margin: 0;
-  padding-top: 1em;
-  padding-bottom: 2em;
+	padding: 0;
+	margin: 0;
+	padding-bottom: 1em;
 }
 
 .container-img {
-  /* https://www.zonecss.fr/proprietes-css/display-css.html#display-css-propriete */
-  display: flex;
-/*
-https://www.zonecss.fr/proprietes-css/align-items-css.html#align-items-css-propriete
-La propriété de feuille de style align-items CSS peut prendre la valeur de :
-  flex-start : le "coin de début" (margin incluses) de chaque élément flexible est collé sur le "début transversal de la ligne* de flexibles".
-  flex-end : le "coin de fin" (margin incluses) chaque élément flexible est collé sur sur la "fin transversal" de la ligne.
-  center : chaque élément flexible (margin incluses) est centré par rapport à "l'axe transversal" de la ligne* de flexibles.
-  baseline : chaque élément flexible s'aligne sur leur baseline afin de partager la même ligne de base (baseline) sur sa ligne. Si l'élément flexible n'a pas de ligne de base, alors elle est calculée en fonction par des bordures de l'élément flexible.
-  stretch : chaque élément flexible qui respecte les règles d'application est étiré afin que sa taille (margin incluses) prenne toute la hauteur de sa ligne* de flexibles tout en respectant les contraintes imposées par min-height, max-height et min-width , max-width. Valeur par défaut.
-  normal : identique à la valeur stretch, valeur par défaut. Je vous conseille faire un reset de cette valeur pour stretch en ce qui concerne les Flexbox Css.
-
-La propriété de feuille de style align-items CSS est applicable sur l'ensemble des balises HTML ou XHTML, si elles sont le container Grid Css (display:[inline-]grid), Flex Css (display:[inline-]flex) ou Multi-Column Css (column[-*]).
-*/
-  align-items: center;
-/*
-https://www.zonecss.fr/proprietes-css/justify-content-css.html#justify-content-css-propriete
-La propriété de feuille de style justify-content CSS peut prendre la valeur d'alignement de :
-  flex-start : le "coin de début" (margin incluses) du premier élément flexible ou grille est collé sur le "début principal", chaque élément flexible ou grille suivant est placé au ras de l'élément précédent. Valeur par défaut.
-  flex-end : le "coin de fin" (margin incluses) du dernier élément flexible ou grille est collé sur la "fin principale", chaque élément flexible ou grille suivant est placé au ras de l'élément précédent.
-  center : chaque élément flexible ou grille suivant est placé au ras de l'élément précédent. Et l'ensemble des éléments flexibles ou grilles est centré par rapport au centre de "l'axe principal".
-  space-between : le "coin de début" (margin incluses) du premier élément flexible ou grille est collé sur le "début principal", le "coin de fin" (margin incluses) du dernier élément flexible ou grille est collé sur la "fin principale". Puis les espaces de part et d'autre de chaque élément flexible sont répartis de manière égale.
-  space-around : les espaces de part et d'autre de chaque élément flexible ou grille sont de taille identique.
-
-La propriété de feuille de style justify-content CSS est applicable sur l'ensemble des balises HTML ou XHTML, si elles sont le container Grid Css (display:[inline-]grid), Flex Css (display:[inline-]flex) ou Multi-Column Css (column[-*]).
-*/
-  justify-content: center;
-/*
-  nowrap : les éléments flexibles sont disposés sur une seule ligne ou colonne, c'est la valeur par défaut.
-  wrap : les éléments flexibles sont disposés si nécessaire sur plusieurs lignes : les un en dessous des autres ou, sur plusieurs colonnes : les un à côté des autres vers la droite.
-  wrap-reverse : les éléments flexibles sont disposés si nécessaire sur plusieurs lignes les un en dessus des autres ou colonnes : les un à côté des autres vers la gauche.
-
-  La propriété de feuille de style flex-grow CSS est applicable sur l'ensemble des balises HTML ou XHTML, si elles sont le conteneur Flexbox Css d'éléments "flexibles" et qu'il soit de type display:[inline-]flex.
-*/
-  flex-wrap: wrap; /* dépende de la valeur flex de l'attribut display */
+	/* https://www.zonecss.fr/proprietes-css/display-css.html#display-css-propriete */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap; /* dépende de la valeur flex de l'attribut display */
 	width: 90%;
-  margin: auto;
+	margin: auto;
 }
 .container-img a:hover {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .grid-item {
-/*
-La fonction de Translation CSS translate3d(X, Y, Z) CSS accepte comme argument de déplacement :
-  X : nombre positif ou négatif suivi d'une unité CSS de longueur ou de % (pourcentage), représentant la translation sur l'axe X.
-  Y : nombre positif ou négatif suivi d'une unité CSS de longueur ou de %, représentant la translation sur l'axe Y.
-  Z : nombre positif ou négatif suivi d'une unité CSS de longueur (sauf %), représentant la translation sur l'axe Z.
-  Si le nombre est égal à 0, c'est la position d'origine sur l'axe concerné.
-
-Conditions d'application de la CSS translate3d().
-  La fonction de Translation CSS translate3d() est applicable avec la propriété de Transformation CSS transform et avec ses propriétés de Transformation préfixées (-moz-transform, -webkit-transform, -ms-transform).
-
-Problème d'interprétation de translate3d() en Css.
-  La propriété de Transformation CSS transform n'est reconnue par certains navigateurs.
-
-Conditions d'animation de translate3d() en CSS3.
-  Mettez transform comme valeur de la propriété de Transformation CSS transition-property.
-
-  La CSS translate3d() est une fonction de feuille de style qui peut être utilisée pour les animations CSS et transitions CSS.
-*/
-  transform: translate3d(0px, 0px, 0px);
-  margin: 0 0.4em 0 0;
+	transform: translate3d(0px, 0px, 0px);
+	margin: 0 0.4em 0 0;
+  
 }
 .grid-item img {
 	width: 100%;
 	height: auto;
-  padding: 0;
-  margin: 0 0 0 0;
+	padding: 0;
+	margin: 0 0 0 0;
 }
 
-.container-img span {
-
-  background-color:var(--color-container-img-bg);
-  color: var(--color-container-img);
-  font-weight: bold;
-
-  line-height: 30px;
-  margin-left: 0.2em;
-  margin-right: 0.2em;
-  text-shadow: 2px 2px #333;
-
-  display:flex; /* permettre l'alignements des items */
-/*
-https://www.zonecss.fr/proprietes-css/position-css.html#position-css-propriete
-La propriété de feuille de style position CSS peut prendre la valeur de position :
-  static : n'est pas considéré comme un élément positionné, left, top, right et bottom sont ignorés. Valeur par défaut.
-  relative : l'élément est considéré comme positionné, le positionnement se fera par rapport à l'endroit où il est positionné dans le flux (où l'élément a été déclaré dans le code HTML), sauf pour certain éléments de tableau.
-  absolute : l'élément est considéré comme positionné, le positionnement se fera par rapport au coin haut gauche de la page HTML ou par rapport au premier parent trouvé qui n'est pas static. Son comportement est de type block et sort du flux.
-  fixed : l'élément est considéré comme positionné, reste fixe, ne bouge pas quand défile l'écran, le point d'origine est coin haut gauche de la zone de contenu de la fenêtre. Son comportement est de type block et sort du flux.
-  sticky (CSS3) : c'est un mixte entre la position relative et fixe. L'élément est considéré en position relative jusqu'à ce que le défilement de la fenêtre soit telle que l'élément serait à moins de la valeur du seuil (top, left, right, bottom). Au-delà de ce seuil, l'élément serait fixé à la valeur du seuil qui est obligatoire. Son positionnement se fera par rapport au coin haut gauche de la page HTML ou par rapport au premier parent trouvé qui n'est pas static et à l'intérieur de cet élément.
-
-Conditions d'application de la CSS position.
-  La propriété CSS position est applicable sur toutes les balises HTML ou XHTML.
-
-Héritage des valeurs Css de position.
-  Les balises filles HTML ou XHTML n'héritent pas de la propriété position CSS.
-
-Problème d'interprétation de position en Css.
-  La propriété position CSS ne pose aucun problème d'interprétation, sauf pour "fixed" sous Internet Explorer qui n'est reconnue qu'à partir de la version 7+ et sauf pour "sticky" sur les balises HTML table et ses enfants (th, td, ...)
-
-Règles de syntaxes CSS pour position.
-position et les propriétés CSS display et float
-  si la propriété CSS display est à none, alors la propriété position CSS est ignorée.
-  Si la propriété de feuille de style position CSS a une valeur de absolute ou fixed alors, la valeur de display se transforme en block pour :
-    inline,
-    inline-block,
-    table-[*].
-  ou en table pour :
-    inline-table.
-*/
-  position:relative; /* permettre d'effectuer un decalage ver le haut */
+.grid-item-img-legend {
+	margin: 0 0 20px;
+	color: var(--color-hx);
+	font-weight: 300;
+	font-family: "Titillium Web", sans-serif;
+	line-height: 1.5em;  
+	/*
+    Un élément positionné avec position: 
+      absolute va être positionné par rapport à son parent le plus proche positionné (avec une valeur de position différente de static).  
+    Le point de référence pour les propriétés top, left, bottom et right va ainsi être le côté de l’élément parent liée à la propriété (côté gauche pour left, supérieur pour top , etc.).       
+  */
+	position: absolute; /* fair en sorte d'avoit un tooltip au bas de l'image */
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+  
+	color: var(--color-h7);
+	font-size: 15px;
+	background-color: var(--color-h7-bg);
+	margin-bottom: 8px;
+	font-weight: bold;
+  text-shadow: 2px 2px 2px rgb(8, 8, 8);
+}
+.grid-item-img-overlay {
+  position: absolute; /* fair en sorte d'avoit un tooltip au bas de l'image */
+  top: 0;
+  bottom:8.8%;
+  left: 0;
+  right: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1; /* passer l'element en arierre plan */
-
-  height: 30px;
-  left: 0;
-  top: -30px; /* decalage ver le haut */
-
-  margin-bottom: -28px; /* ??????????? */
+  color: white;
+  font-size: 2em;
+  /* background-color: rgba(36, 35, 35, 0.404); */
+  /* background-color: rgba(255, 4, 4, 0.404); */
+  display: none;
 }
-
+.grid-item a:hover .grid-item-img-overlay{
+  display: flex;
+}
 
 /*
  ######################################################################
  FIXED TOP NAVBAR
  ######################################################################
 */
-header {
-  display: flex;
-  position: fixed; /* fixer la navbar surviewport */
-  left: 0;
-  right: 0;
-  z-index: 3;
-  height: 13%;
-}
+
+
 
 #navbar {
-  --navbar-height: 64px; /* Initialisation variable */
-  position: fixed; /* fixer la navbar surviewport */
-  height: var(--navbar-height);
-  background-color: var(--navbar-bg-color);
-  left: 0;
-  right: 0;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.589);
-  z-index: 20;
-  top: 12.5%;
+	--navbar-height: 64px; /* Initialisation variable */
+	position: fixed; /* fixer la navbar surviewport */
+	height: var(--navbar-height);
+	background-color: var(--navbar-bg-color);
+	left: 0;
+	right: 0;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.589);
+	z-index: 20;
+	top: 12.5%;
 }
 
 .navbar-container {
-  /* taille sidebar top 
+	/* taille sidebar top 
     aligner au centre en modifiant la largeur max
 
     max-width: 1000px;
   */
-  width: 100%;
-  padding: 0 1em 0 1em;
-  margin: 0;  
-  display: flex; /* permettre l'alignements des items */
-  justify-content: space-between; /* centrer les element apres le logo du site */
-  height: 100%;
-  align-items: center; /* centrer les elements */
+	width: 100%;
+	padding: 0 1em 0 1em;
+	margin: 0;
+	display: flex; /* permettre l'alignements des items */
+	justify-content: space-between; /* centrer les element apres le logo du site */
+	height: 100%;
+	align-items: center; /* centrer les elements */
 }
 
 .navbar-item {
-  margin: 0.3em;
-  width: 90%;
-  /* border: 1px solid lightgray; */
+	margin: 0.3em;
+	width: 90%;
+	/* border: 1px solid lightgray; */
 }
 
 .home-link,
 .navbar-link {
-  color: var(--navbar-text-color);
-  text-decoration: none;
-  display: flex;
-  font-weight: 400;
-  align-items: center;
-  cursor: pointer;
+	color: var(--navbar-text-color);
+	text-decoration: none;
+	display: flex;
+	font-weight: 400;
+	align-items: center;
+	cursor: pointer;
 }
 
 .home-link:is(:focus, :hover) {
-  color: var(--navbar-text-color-focus);
+	color: var(--navbar-text-color-focus);
 }
 
 .navbar-link {
-  justify-content: center;
-  width: 100%;
-  padding: 0.4em 0.8em;
-  border-radius: 5px;
+	justify-content: center;
+	width: 100%;
+	padding: 0.4em 0.8em;
+	border-radius: 5px;
 }
 
 .navbar-link:is(:focus, :hover) {
-  color: var(--navbar-text-color-focus);
-  background-color: var(--navbar-bg-contrast);
+	color: var(--navbar-text-color-focus);
+	background-color: var(--navbar-bg-contrast);
 }
 
 .navbar-logo {
-  transition: 650ms;
-  background-color: var(--navbar-text-color-focus);
-  background-image: url("../../asset/img/logo.jpg");
-  border-radius: 50%;
-  width: 150px;
-  height: 30px;
-  margin-inline-start: 0.5em;
-  margin-inline-end: 0.5em;
-  cursor: pointer;
+	transition: 650ms;
+	background-color: var(--navbar-text-color-focus);
+	background-image: url("../../asset/img/logo.jpg");
+	border-radius: 50%;
+	width: 150px;
+	height: 30px;
+	margin-inline-start: 0.5em;
+	margin-inline-end: 0.5em;
+	cursor: pointer;
 }
 
 /*
   Navbar Toggle button
 */
 #navbar-toggle {
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 /*
   Navbar Toggle button
     ligne interieur du bouto (dessin menu)
 */
 .icon-bar {
-  display: block;
-  width: 25px;
-  height: 4px;
-  margin: 2px;
-  background-color: var(--navbar-text-color);
+	display: block;
+	width: 25px;
+	height: 4px;
+	margin: 2px;
+	background-color: var(--navbar-text-color);
 }
 
 #navbar-toggle:is(:focus, :hover) .icon-bar {
-  background-color: var(--navbar-text-color-focus);
+	background-color: var(--navbar-text-color-focus);
 }
-
 
 /*
 GESTION DU MENU
@@ -586,60 +507,134 @@ CONTROLER VIA
 si le panneau est déplier (aria-expanded)
  apllique un angle de 45deg sur 1er et dernier ligne 
 */
-#navbar-toggle[aria-expanded='true'] .icon-bar:is(:first-child, :last-child) {
-  position:absolute; /* positioné par rapport au point haut guauche de l'element parent */
-  margin: 0;
-  width: 30px;
+#navbar-toggle[aria-expanded="true"] .icon-bar:is(:first-child, :last-child) {
+	position: absolute; /* positioné par rapport au point haut guauche de l'element parent */
+	margin: 0;
+	width: 30px;
 }
 
-#navbar-toggle[aria-expanded='true'] .icon-bar:first-child {
-  transform: rotate(45deg); /* pour former la croix */
+#navbar-toggle[aria-expanded="true"] .icon-bar:first-child {
+	transform: rotate(45deg); /* pour former la croix */
 }
 
-#navbar-toggle[aria-expanded='true'] .icon-bar:nth-child(2) {
-  opacity: 0; /* masque la ligne du millieu */
+#navbar-toggle[aria-expanded="true"] .icon-bar:nth-child(2) {
+	opacity: 0; /* masque la ligne du millieu */
 }
 
-#navbar-toggle[aria-expanded='true'] .icon-bar:last-child {
-  transform: rotate(-45deg); /* pour former la croix */
+#navbar-toggle[aria-expanded="true"] .icon-bar:last-child {
+	transform: rotate(-45deg); /* pour former la croix */
 }
 
 /*
   elements du menu
 */
 #navbar-menu {
-  position: fixed;
-  top: var(--navbar-height);
-  bottom: 0;
-  opacity: 0;
-  visibility: hidden;
-  left: 0;
-  right: 0;
+	position: fixed;
+	top: var(--navbar-height);
+	bottom: 0;
+	opacity: 0;
+	visibility: hidden;
+	left: 0;
+	right: 0;
 }
 
-#navbar-toggle[aria-expanded='true'] + #navbar-menu {
-  background-color: rgba(0, 0, 0, 0.4);
-  opacity: 1;
-  visibility: visible;
+#navbar-toggle[aria-expanded="true"] + #navbar-menu {
+	background-color: rgba(0, 0, 0, 0.4);
+	opacity: 1;
+	visibility: visible;
 }
 
 .navbar-links {
- 
-  list-style: none;
-  position: absolute;
-  background-color: var(--navbar-bg-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  left: 0;
-  right: 0;
-  margin: 1.4rem;
-  border-radius: 5px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  
+	list-style: none;
+	position: absolute;
+	background-color: var(--navbar-bg-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	left: 0;
+	right: 0;
+	margin: 1.4rem;
+	border-radius: 5px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-#navbar-toggle[aria-expanded='true'] + #navbar-menu .navbar-links {
-  padding: 1em;
+#navbar-toggle[aria-expanded="true"] + #navbar-menu .navbar-links {
+	padding: 1em;
+}
+
+/*
+ ######################################################################
+ NIGHTMODE TOGGLE
+ ######################################################################
+*/
+
+.container-nightmode {
+	padding: 3em;
+	transition: 650ms;
+}
+.container-nightmode-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 70%;
+	margin: auto;
+	margin-top: 1.4em;
+	transform: translateY(5%);
+}
+.nightmode-label,
+.nightmode-toggle {
+	height: 2.8rem;
+	border-radius: 100px;
+}
+.nightmode-label {
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 100px;
+	position: relative;
+	cursor: pointer;
+}
+.nightmode-toggle {
+	position: absolute;
+	width: 50%;
+	background-color: #fff;
+	box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+	transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.nightmode-names {
+	font-size: 90%;
+	font-weight: bolder;
+	width: 100%;
+	height: 100%;
+	padding: 0 20% 0 20%;
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	user-select: none;
+}
+.nightmode-dark {
+	opacity: 0.3;
+}
+
+/* -------- Switch Styles ------------*/
+#switch_nightmode[type="checkbox"] {
+	display: none;
+}
+#switch_nightmode[type="checkbox"]:checked
+	+ .container-nightmode
+	.nightmode-toggle {
+	transform: translateX(100%);
+	background-color: #34323d;
+}
+#switch_nightmode[type="checkbox"]:checked
+	+ .container-nightmode
+	.nightmode-dark {
+	opacity: 1;
+	color: var(--color-hx);
+}
+#switch_nightmode[type="checkbox"]:checked
+	+ .container-nightmode
+	.nightmode-light {
+	opacity: 0.3;
 }
 

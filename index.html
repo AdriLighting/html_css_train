@@ -1,27 +1,27 @@
-<!-- 
-  Page web basée sur la page :
-    https://www.emmanuel-kawala.fr/
-
-
- -->
-
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-  <meta charset="UTF-8">
-  <meta name="description" content="">
-  <meta keywords="">
-  <meta name="viewport" content="width=device=width , initial-scale=1.0">
-
+  <meta charset="utf-8">
   <title>Site vitrine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="description">
+
+  <!-- 
+    fontawesome https://fontawesome.com/start
+    Latest Version 6 
+  -->  
+  <script src="https://kit.fontawesome.com/e667e0fa1a.js" crossorigin="anonymous"></script>
+
+  <!--  
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+  -->
 
   <!-- 
     JavaScript Library 
       jquery 
   -->
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
   <!-- 
     CSS framework 
@@ -32,7 +32,6 @@
             .container
             .spanXX
   -->
-
   <!-- Bootstrap.js by @fat & @mdo -->
   <!-- <script src="/asset/js/bootstrap.min.js"></script>   -->
 
@@ -41,65 +40,77 @@
       fancybox CSS 
         https://fancyapps.com/fancybox/getting-started/ 
   -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
-  
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
 
   <!-- 
     Internal CSS By Adri 180323
   -->
   <link rel="stylesheet" type="text/css" href="asset/css/main.css">
-
   <!-- 
-    Responsive CSS framework 
-      Bootstrap https://getbootstrap.com/docs/5.3/getting-started/introduction/ 
-        v2.3.1 
-          Edited 180323 by Adri
-            .row
-            .container
-            .spanXX
+    Responsive CSS By Adri 180323
+      mobile
+        < 767px / 700px
+        < 450px
   -->
   <link rel="stylesheet" type="text/css" href="asset/css/responsive.css">
-</head>
+
 </head>
 
 <body>
   <!-- HEADER -->
-  <header >
-    <img class="default_backgroud_img br-no" src="asset/img/banierre_logo.jpg" alt="Default img"/>
-    <h1 style="display: none;">La Boutique Effets & Matières</h1>  
+  <header>
+    <img class="default_backgroud_img br-no" src="asset/img/banierre_logo.jpg" alt="Default img">
+    <h1 style="display: none;">La Boutique Effets & Matières</h1>
   </header>
   <!-- End HEADER -->
 
-    <!-- Fixed Top Navbar -->
-    <nav class="navbar-container" id="navbar">
-      <!-- Website logo -->
-      <div id="navbar-logo" class="navbar-logo" link-position="boutique 200"></div>
-      <!-- Navbar Toggle button -->
-      <button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu" aria-expanded="false">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <!-- Navbar Links -->
-      <div id="navbar-menu" aria-labelledby="navbar-toggle">
-        <ul class="navbar-links">
-          <li class="navbar-item"><a id="navbar-links-shop" class="navbar-link"  link-position="boutique 200">About</a></li>
-          <li class="navbar-item"><a id="navbar-links-contact" class="navbar-link"  link-position="contact 200">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-    <!-- End Fixed Top Navbar -->
+  <!-- Fixed Top Navbar -->
+  <nav class="navbar-container" id="navbar">
+    <!-- Website logo -->
+    <div id="navbar-logo" class="navbar-logo"></div> <!-- link-position="boutique 200" -->
+    <!-- Navbar Toggle button -->
+    <button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu" aria-expanded="false">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <!-- Navbar Links -->
+    <div id="navbar-menu" aria-labelledby="navbar-toggle">
+      <ul class="navbar-links">
+        <li class="navbar-item"><a id="navbar-links-shop" class="navbar-link" link-position="boutique 200">About</a>
+        </li>
+        <li class="navbar-item"><a id="navbar-links-contact" class="navbar-link" link-position="contact 200">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- End Fixed Top Navbar -->
   <main>
     <!-- START SECTIONS -->
 
+    <!-- <input type="checkbox" id="switch_nightmode" checked>
+  <div class="container-nightmode" >
+    <h3 class="title">NightMode</h3>
+    <div class="container-nightmode-content">  
+      <label for="switch_nightmode" class="nightmode-label">
+        <div class="nightmode-toggle"></div>
+        <div class="nightmode-names">
+          <p class="nightmode-light">Light</p>
+          <p class="nightmode-dark">Dark</p>
+        </div>
+      </label>
+    </div>
+  </div> -->
+
     <!-- Shop -->
+    
     <section id="boutique" class="boutique-pres bg-dark">
       <div class="title-page">
         <!-- Title -->
         <h2 class="title">Effets & Matières</h2>
         <!-- Banierre -->
-        <img class="default_backgroud_img mb-01e" src="asset/img/banierre.jpg" alt="Default img"/>      
-        <!-- Title description -->    
+        <img class="default_backgroud_img mb-01e" src="asset/img/banierre.jpg" alt="Default img">
+        <!-- Title description -->
         <h3 class="title-description">
           Boutique partagée de créateurs locaux<br>
           Déco maison dans l'esprit du temps
@@ -117,19 +128,21 @@
     <!-- Pictures gallery_1 -->
     <section id="gallery_1" class="gallery">
       <div class="title-page">
-        <!-- Title --> 
+        <!-- Title -->
         <h2 class="title">Nouveautés</h2>
-        <!-- Title description --> 
+        <!-- Title description -->
         <h3 class="title-description">
-          Le printemps 🌱arrive doucement … une petite création printanière artisanale 🌸? Venez nous rendre visite , tous les créateurs ont amené de belles nouveautés ❤️
+          Le printemps 🌱arrive doucement … une petite création printanière artisanale 🌸? Venez nous rendre visite ,
+          tous les créateurs ont amené de belles nouveautés ❤️
         </h3>
       </div>
       <!-- Shop Picture Gallery -->
       <div class="container-img" id="gallery_creations">
         <div id="gallery_creations_img_0" class="grid-item">
           <a href="asset/img/g1/g1_2.jpg" data-fancybox="gallery_creations" data-caption="Photos #1">
-            <img src="asset/img/g1_t/g1_2.jpg" alt="Photos #1" />
-            <h7>Photos #1</h7>
+            <img src="asset/img/g1_t/g1_2.jpg" alt="Photos #1">
+            <div class="grid-item-img-legend">Photos #1</div>
+            <div class="grid-item-img-legend grid-item-img-overlay">+</div>
           </a>
         </div>
       </div>
@@ -138,9 +151,9 @@
     <!-- Pictures gallery_2 -->
     <section id="gallery_2" class="gallery bg-dark">
       <div class="title-page">
-        <!-- Title description --> 
-        <h2 class="title">Nouvelles Vitrines</h2> 
-        <!-- Title --> 
+        <!-- Title description -->
+        <h2 class="title">Nouvelles Vitrines</h2>
+        <!-- Title -->
         <h3 class="title-description">
           Venez vous régaler les pupilles!<br>
           De belles nouveautés vous attendent à la boutique!<br>
@@ -153,82 +166,77 @@
       <div class="container-img" id="gallery_other">
         <div id="gallery_other_img_0" class="grid-item">
           <a href="asset/img/g2/g2_1.jpg" data-fancybox="gallery_other" data-caption="Photos #1">
-            <img src="asset/img/g2_t/g2_1.jpg" alt="Photos #1" />
-            <h7>Photos #1</h7>
+            <img src="asset/img/g2_t/g2_1.jpg" alt="Photos #1">
+            <div class="grid-item-img-legend">Photos #1</div>
+            <div class="grid-item-img-legend grid-item-img-overlay">+</div>
           </a>
-          
         </div>
       </div>
     </section>
 
     <!-- 
       Section contact
-    -->    
+    -->
     <section id="contact">
       <div class="container-contact">
-        <div class="container">
-          <div class="title-page">
-            <h2 class="title">Coordonnées</h2>
-            <h3 class="title-description">
-              Notre boutique est situé à Tournon sur Rhône, à 100 km au sud de Lyon. Pour tout renseignements, nous vous invitons à nous joindre à l'aide des informations suivantes. 
-            </h3>
-          </div>          
-          <div class="row mb-1e">
-            <div class="span4 pad-1e">
-              <div class="contact-details">
-                <h3>Courriel</h3>
-                <a href="mailto:mail@mail.fr">mail@mail.fr</a>
-              </div>
+        <div class="title-page">
+          <h2 class="title">Coordonnées</h2>
+          <h3 class="title-description">
+            Notre boutique est situé à Tournon sur Rhône, à 100 km au sud de Lyon. Pour tout renseignements, nous vous
+            invitons à nous joindre à l'aide des informations suivantes.
+          </h3>
+        </div>
+        <div class="row">
+          <div class="container-contact-details">
+            <div class="contact-details">
+              <h3>Courriel</h3>
+              <a href="mailto:mail@mail.fr">mail@mail.fr</a>
             </div>
-            <div class="span4 pad-1e">
-              <div class="contact-details ">
-                <h3>Téléphone</h3>
-                <p>(+33) 06 00 00 00 00</p>
-              </div>
+          </div>
+          <div class="container-contact-details">
+            <div class="contact-details ">
+              <h3>Téléphone</h3>
+              <p>(+33) 06 00 00 00 00</p>
             </div>
-            <div class="span4 pad-1e">
-              <div class="contact-details">
-                <h3>Adresse</h3>
-                <p>
+          </div>
+          <div class="container-contact-details">
+            <div class="contact-details">
+              <h3>Adresse</h3>
+              <p>
                 13 Rue Thiers
                 <br>
                 07300 Tournon-sur-Rhône
                 <br>
                 FRANCE
-                </p>
-              </div>
+              </p>
             </div>
           </div>
-          <div class="container-googlemap bg-light pad-1e">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2817.9557456482735!2d4.8325853!3d45.0664088!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f54360a1674adb%3A0x2d76649aeee3a460!2sEffets%20Et%20Mati%C3%A8res%20Boutique%20de%20Cr%C3%A9ateurs!5e0!3m2!1sfr!2sfr!4v1679133024257!5m2!1sfr!2sfr" 
-              width="100%" height="380px" frameborder="0" style="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
+        </div>
+        <div class="container-googlemap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2817.9557456482735!2d4.8325853!3d45.0664088!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f54360a1674adb%3A0x2d76649aeee3a460!2sEffets%20Et%20Mati%C3%A8res%20Boutique%20de%20Cr%C3%A9ateurs!5e0!3m2!1sfr!2sfr!4v1679133024257!5m2!1sfr!2sfr">
+          </iframe>
         </div>
       </div>
     </section>
+
+    <footer id="footer">
+      <div class="footer-p">
+        <p>&copy;Tp</p>
+      </div>
+    </footer>     
   </main>
 
-  <footer id="footer">
-    <div class="footer-p">
-      <p>&copy;Tp</p>
-    </div>
-  </footer>
 
   <!-- 
     fancybox Javascript 
       https://fancyapps.com/fancybox/getting-started/ 
   -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
   <!-- 
     Internal Javascript By Adri 180323
   -->
-  <script type="text/javascript" src="asset/js/index.js"></script>
-
-  <script type="text/javascript"></script>  
-
+  <script src="asset/js/index.js"></script>
 </body>
 
 </html>
