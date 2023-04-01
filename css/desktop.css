@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+:root{
+  --color-charte-blue: #0065FC;
+  --color-charte-lblue: #DEEBFF;
+  --color-bg-gray: #F2F2F2;
+}
+body {
+	font-family: "Raleway", "Times New Roman", Times, serif;
+	font-size: 14px;
+	line-height: 1.6;
+	margin: 0;
+	padding: 0;
+	background-color: var(--color-bg-gray);
+}
+* {
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+  color:  black;
+}
+li {
+	list-style-type: none;
+}
+img,
+p,
+ul,
+h1 {
+	margin: 0;
+	padding: 0;
+}
+a:visited {
+  color: none;
+}
+.mtb-auto{
+  margin: auto 0 auto 0;
+}
+
+/* 
+  Logo + Principal 
+*/
+
+/* header - logo + nav */
+header {
+	margin: 0;
+	padding: 0;  
+	display: flex;
+	justify-content: space-between;
+}
+/* Logo */
+.navbar-top-logo {
+  /* background-color: aquamarine; */
+	padding: 0;   	
+  margin: auto 0 auto 0;
+
+}
+.navbar-top-logo img {
+	width: auto;
+  height: 70px;
+}
+/* 
+  Menu Principal
+*/
+/* unordered list */
+ul.navbar-top-menu {
+  /* background-color: rgb(255, 0, 221);   */
+  display: table;
+  height: 100%;
+}
+/* unordered list - items */
+li.menu-item {
+  /* background-color: aqua; */
+  display: table-cell; 
+  width: 200px;
+  vertical-align: middle;
+	text-align: center;
+  border-top: 2px solid transparent;
+}
+/* unordered list - items : hover */
+li.menu-item:hover {
+	border-top: 2px solid black;
+	cursor: pointer;
+}
+li.menu-item:hover a {
+	text-decoration: underline;
+}
+/* unordered list - items - a : hover */
+li.menu-item a:hover {
+	text-decoration: underline;
+}
+
+main {
+  /* background-color: rgba(0, 0, 0, 0.411); */
+	margin: 0;
+	padding: 0;  
+}
+
+
+/* 
+  Filtres
+    jme suis base sur tout un tas de pixel pour gerer les 
+    iones + bouton "A CHANGER PAR LA SUITE".
+*/
+#section_filtres {
+  /* background-color: aquamarine; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* Titre */
+#section_filtres h2{
+  margin-top: 10px;
+}
+/* Icone + boutons */
+.filtres-boxs{
+  /* background-color: #0065FC; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.filtres-box{
+  border: 3px solid #e0e0e0;
+  border-radius: 30px;
+  margin-left: 40px;
+  padding: 10px;
+  padding-right: 21px;
+  padding-left: 35px;
+  margin-bottom: 5px;
+}
+.filtres-box:hover{
+  cursor: pointer;
+}
+/* Icone */
+.filtres-box-icone{
+  position: absolute;
+  width: 47px;
+  height: 47px;
+  font-size: 20px;
+  color: #0065FC;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  padding: 14px;
+  margin-left: -45px;
+  margin-top: -13px;
+}
+/* bouton - texte */
+.filtres-box p{
+  padding-left: 10px;
+  font-weight: 800;
+}
+.filtres-box:hover p{
+  color: var(--color-charte-blue);
+}
+
+@media screen and (min-width: 357px) and (max-width: 768px) {
+	/* tablette 357px - 768px (ipad = 810)  */
+
+	header {
+    /* background-color: rgb(1, 83, 56); */
+		display: flex;
+		flex-direction: column;
+	}  
+	.navbar-top-logo {
+		/* background-color: rgba(1, 6, 83, 0.507); */
+		text-align: center;
+	}
+  ul.navbar-top-menu {
+    display: table;
+    width: 100%;
+    height: 70px;
+  }
+  #section_filtres .d-table-title {
+    display: block; 
+  }
+}
+@media screen and (max-width: 356px) {
+	/* mobile 357px */
+	header {
+		display: flex;
+		flex-direction: column;
+	}  
+	.navbar-top-logo {
+		/* background-color: rgba(1, 6, 83, 0.507); */
+    text-align: center;
+	}
+  ul.navbar-top-menu {
+    height: 50px;
+  }
+  #section_filtres .d-table-title {
+    display: block; 
+  }
+}
