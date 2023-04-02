@@ -5,17 +5,26 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Booki</title>
-
+  <title>Booki - hébergement pour les vacances</title>
   <!-- fontawesome free kit Web Fonts 6.0 -->
   <script src="https://kit.fontawesome.com/e667e0fa1a.js" crossorigin="anonymous"></script>
-
-  <!-- Bootstrap desktop -->
+  <!-- Google Font - police du site : Raleway -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- reset css -->
+  <link rel="stylesheet" href="./css/normalize.css">
+  <!-- Bootstrap du site -->
   <link rel="stylesheet" href="./css/desktop.css">
-
+  <script src="./debug/debug.js"></script>
 </head>
 
-<body>
+<body id="body">
+  <!-- 
+    début Header contenant 
+      le logo ainsi que 
+      le menu principal 
+  -->
   <header>
     <div class="navbar-top-logo">
       <img src="./images/logo/Booki@3x.png" alt="Logo du site">
@@ -24,44 +33,166 @@
       <ul class="navbar-top-menu">
         <li class="menu-item"><a href="#">Hébergements</a></li>
         <li class="menu-item"><a href="#">Activités</a></li>
-        <!-- <li><a href="#">Activités</a></li> -->
-        <!-- <li><a href="#">S'inscrire</a></li> -->
+        <li class="menu-item"><a href="#">S'inscrire</a></li>
       </ul>
     </nav>
   </header>
-  <div id="identite_du_site">
-    <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
-    <p>En plein centre ville ou en pleine nature</p>
-  </div>  
+
+  <!-- début core -->
   <main>
-    <section id="section_filtres">
-          <div class="mtb-auto">
-            <h2>Filtres</h2>
-          </div>
-          <div class="mtb-auto">
-            <div class="filtres-boxs">
-              <div class="filtres-box">
-                <i class="fa-solid fa-money-bill filtres-box-icone"></i>
-                <p>Economique</p>
-              </div>
-              <div class="filtres-box">
-                <i class="fa-solid fa-people-group filtres-box-icone"></i>
-                <p>Familial</p>
-              </div>
-              <div class="filtres-box">
-                <i class="fa-solid fa-heart filtres-box-icone"></i>
-                <p>Romantique</p>
-              </div>
-              <div class="filtres-box">
-                <i class="fa-solid fa-dog filtres-box-icone"></i>
-                <div class="filtres-box-titre">
-                  <p>Animaux Autourisés</p>
-                </div> 
-              </div>                        
-            </div>  
-          </div>  
+    <!-- Titre Pricipal du site + Déscription -->
+    <div id="site-title">
+      <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
+      <p>En plein centre ville ou en pleine nature</p>
+    </div>
+
+    <!-- début section rercher une ville -->
+    <section id="section_search">
+      <form method="get" action="#">
+        <div class="form-icon">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <div class="form-icon-text">
+          <input type="text" name="search_city" id="search_city" placeholder="Marseille, Paris" required>
+        </div>
+        <div class="form-icon-submit">
+          <button type="submit" class="btn">Rechercher</button>
+          <!-- <button type="submit" ><i class="fa-solid fa-magnifying-glass loupe"></i></button> -->
+        </div>
+      </form>
     </section>
-  </main>  
+    <!-- début section filtres -->
+    <section id="section_filtres">
+      <div class="mtb-auto">
+        <h2>Filtres</h2>
+      </div>
+      <div class="mtb-auto">
+        <div class="filtres-boxs">
+          <div class="filtres-box">
+            <i class="fa-solid fa-money-bill filtres-box-icone"></i>
+            <p>Economique</p>
+          </div>
+          <div class="filtres-box">
+            <i class="fa-solid fa-people-group filtres-box-icone"></i>
+            <p>Familial</p>
+          </div>
+          <div class="filtres-box">
+            <i class="fa-solid fa-heart filtres-box-icone"></i>
+            <p>Romantique</p>
+          </div>
+          <div class="filtres-box">
+            <i class="fa-solid fa-dog filtres-box-icone"></i>
+            <div class="filtres-box-titre">
+              <p>Animaux Autourisés</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- début section Hébérgement -->
+    <section id="section_articles">
+      <div class="row">
+      <div class="col-60">
+      <div class="container-galleries">
+        <h2>Hébergements à Marseille</h2>
+        <div class="grid-container mb-20">
+          <div class="grid-item">
+            <img src="./images/hebergements/au_coeur_de_leau.jpg" alt="">
+            <div class="grid-item-infos">
+              <p>Au coeur de l'eau</p>
+              <p>Nuit a partir de 76€</p>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+            </div>
+          </div>
+          <div class="grid-item">
+            <img src="./images/hebergements/auberge_la_cannebiere.jpg" alt="">
+            <div class="grid-item-infos">
+              <p>Auberge la cannebiere</p>
+              <p>Nuit a partir de 76€</p>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+            </div>          
+          </div>
+          <div class="grid-item">
+            <img src="./images/hebergements/auberge_le_panier.jpg" alt="">
+            <div class="grid-item-infos">
+              <p>Auberge le panier</p>
+              <p>Nuit a partir de 76€</p>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+            </div>          
+          </div>
+        </div> 
+        <div class="grid-container">
+          <div class="grid-item">
+            <img src="./images/hebergements/hotel_chez_amina.jpg" alt="">
+            <div class="grid-item-infos">
+              <p>hotel chez mina</p>
+              <p>Nuit a partir de 76€</p>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+            </div>            
+          </div>
+          <div class="grid-item">
+            <img src="./images/hebergements/hotel_de_la_mer.jpg" alt="">
+            <div class="grid-item-infos">
+              <p>hotel de la mer</p>
+              <p>Nuit a partir de 76€</p>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+            </div>            
+          </div>
+          <div class="grid-item">
+            <img src="./images/hebergements/hotel_du_port.jpg" alt="">
+            <div class="grid-item-infos">
+              <p>hotel du ort</p>
+              <p>Nuit a partir de 76€</p>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+              <i class="fa-solid fa-star star_gray"></i>
+            </div>            
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="col">
+      <div class="container-galleries">
+        <h2>Titre</h2>
+        <p><span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas incidunt quisquam deleniti dolorum eligendi quae, nesciunt similique, molestias dicta eum dolor obcaecati omnis cumque suscipit? Accusamus porro quod a molestiae.</span><span>Natus harum expedita eligendi consequatur aliquam assumenda ea cumque voluptatibus qui, officiis omnis dolor, nam fugit odio impedit. Beatae reiciendis earum pariatur quas eum officia ab autem dignissimos voluptate. At?</span><span>Quos alias nisi voluptatem illo odio aliquam recusandae, perferendis necessitatibus consequatur tempore pariatur consequuntur at iste ullam non ipsa eligendi tenetur tempora amet iusto totam doloremque. Laborum aperiam nostrum a.</span><span>Animi libero, earum consequatur beatae, fugiat at necessitatibus soluta cum nostrum ullam eum expedita dolor laborum exercitationem repellat officia obcaecati. Voluptatem harum qui voluptates exercitationem sed placeat laboriosam amet deleniti!</span><span>Cumque quisquam aliquid ipsum nostrum dicta laboriosam libero, repellat asperiores, sit maiores eveniet doloribus suscipit ab, quo nobis mollitia animi rerum sequi nihil omnis voluptatibus totam. Similique ad veniam id?</span><span>Quam, perferendis placeat quasi magni amet distinctio laboriosam maiores officia aliquam quisquam at voluptatum pariatur quae eum dolorum odit voluptates! Facilis, dicta. Impedit ad corrupti quasi saepe? Ipsum, voluptatem quidem.</span><span>Asperiores alias non velit doloribus libero. Voluptas impedit nisi ullam, autem totam sed ipsam quisquam cupiditate eos veritatis natus beatae hic illum, ipsa inventore! Accusamus expedita enim hic aliquid delectus.</span><span>Repudiandae distinctio officia neque nesciunt illum. Ipsa quisquam provident odio at maxime, quidem facilis doloremque fuga libero iste, temporibus saepe quis eligendi eveniet, architecto molestiae minima quaerat nisi voluptate exercitationem.</span><span>Rem itaque eveniet vitae cupiditate, aliquam eum corporis ducimus. Doloremque, sequi. Quaerat, quibusdam cum iste minima error dolore nostrum suscipit ipsum soluta vero, rem ab laborum ratione qui eos id.</span><span>Deleniti, animi cum! Magni, exercitationem? Incidunt iste similique deserunt enim dicta repellendus dolores cupiditate sed perspiciatis cum! Quod blanditiis corporis obcaecati architecto ipsum minus at cupiditate maxime ratione. Autem, a!</span></p> 
+      </div>
+      </div>
+
+      </div>
+
+    </section>
+    <!-- Article -->
+    <!-- début section Populaire -->
+    <!-- Article -->
+    <!-- début section Activités -->
+    <!-- Artticle -->
+  </main>
+  <!-- Footer² -->
+  <script>
+    _debug(0)
+  </script>
 </body>
 
 </html>
