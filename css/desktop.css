@@ -350,7 +350,7 @@ main {
 #hebergements{
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 64%;
   background-color: #F2F2F2;
   padding: 3%;
   border-radius: 20px;
