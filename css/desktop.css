@@ -23,10 +23,10 @@ A VOIR
 	--color-charte-blue: #0065fc;
 	--color-charte-lblue: #deebff;
 	--color-bg-gray: #f2f2f2;
-	--default-pad: 25px;
+	--default-pad: 45px;
 }
 body {
-	font-family: "Raleway", "Times New Roman", Times, serif;
+	font-family: "Raleway", "Times New Roman", Times, serif; /* utilise Raleway sur l'essemble du site */
 	font-size: 14px;
 	line-height: 1.4;
 	margin: 0;
@@ -36,14 +36,17 @@ body {
 * {
 	box-sizing: border-box;
 }
+/* par default les liens sons sans décoration de la couleur de la charte imposé */
 a {
 	text-decoration: none;
 	color: var(--color-charte-blue);
 	font-size: 15px;
 }
+/* ul > li uniquement utilisé pour le menu, modifier le sélécteur si jamais je doit en utiliser ailleur genr pour le fouteur idk */
 li {
 	list-style-type: none;
 }
+/* Reset des margin et padding*/
 img,
 p,
 ul,
@@ -52,14 +55,17 @@ h1 {
 	margin: 0;
 	padding: 0;
 }
+/* h1 par default de 21px bold */
 h1 {
 	font-size: 22px;
 	font-weight: bold;
 }
-
+/* Désactivation des liens visité */
 a:visited {
 	color: none;
 }
+
+/* utilitaires pour les margin */
 .mtb-auto {
 	margin: auto 0 auto 0;
 }
@@ -78,8 +84,8 @@ a:visited {
 header {
 	margin: 0;
 	padding: 0 var(--default-pad) 0 var(--default-pad);
-	display: flex;
-	justify-content: space-between;
+	display: flex; /* pour pouvoir mettre le logo a coté dumenu */
+	justify-content: space-between; /* pour mettre le menu a droite du logo */
 	 /* [class*="col"]:nth-child(1)  */
 }
 /* 
@@ -98,19 +104,19 @@ header {
 */
 /* unordered list */
 ul.navbar-top-menu {
-	display: table;
+	display: table; /* pour pouvoir afficher un border-top au relower des liens menu */
 	height: 100%;
 }
 /* unordered list - items */
 li.menu-item {
-	display: table-cell;
+	display: table-cell; /* cellule a l'horizontal pour le menu */
 	width: 200px;
-	vertical-align: middle;
-	text-align: center;
-	border-top: 3px solid transparent;
+	vertical-align: middle; /* centrer le lien verticalement */
+	text-align: center; /* centrer le lien horizontalement */
+	border-top: 3px solid transparent; /* de base je met un border-top transaprent pour eviter une déformation de la cellule quand l'utilisateur activera le relower */
 }
 li.menu-item:last-child {
-	font-weight: bold;
+	font-weight: bold; /* pour coller a la maquette et mettre le lien s'inscrire en gras */
 }
 /* unordered list - items : hover */
 li.menu-item:hover {
@@ -135,7 +141,6 @@ li.menu-item:hover a {
   ############################
 */
 main {
-	/* background-color: rgba(204, 0, 255, 0.767); */
 	margin: 0;
 	padding: 0;
 }
@@ -146,14 +151,14 @@ main {
     #section_search
       form
         icone -> input text -> input submit
+    /\ Mobile - Faire le responsive en intergchangent le bouton text avec le bouton icone et reduire la width de l'input 
 */
 /* Zone Du formulaire de recherche */
 #section_search {
-	/* margin-bottom: 20px; */
 	padding: 0 var(--default-pad) 20px var(--default-pad);
 }
 #section_search form {
-	display: flex;
+	display: flex; /* barre de rechere en ligne = Ico map + input + bt submit */
 	flex-direction: row;
 }
 /* 
@@ -176,7 +181,9 @@ main {
 }
 /* 
   Div input text 
-    situé apres l'icone (ne change pas?)
+    situé apres l'icone (ne change pas?) 
+    tablette  - ? 
+    mobile    - ?
 */
 .form-icon-text {
 	background-color: #ffffff;
@@ -193,7 +200,9 @@ main {
 }
 /* 
   Div submit
-   peut étre ajuster le padding suivant le format tablette et mobile 
+    peut étre ajuster le padding suivant le format tablette et mobile 
+    tablette  - ? 
+    mobile    - ?   
 */
 .form-icon-submit {
 	background-color: #0065fc;
@@ -204,7 +213,11 @@ main {
 	border-left-width: 0px;
 	display: inline-flex;
 }
-/* button formulaire avec text pour le format Desktop */
+/* 
+  button formulaire avec text pour le format Desktop 
+    tablette  - ? 
+    mobile    - ?     
+*/
 .form-icon-submit button {
 	cursor: pointer;
 
@@ -250,7 +263,6 @@ main {
 }
 /* Icone + boutons */
 .filtres-boxs {
-	background-color: #00d6fc;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -262,7 +274,6 @@ main {
 	width: auto;
 	margin-left: 10px;
 	margin-bottom: 10px;
-	/* padding: 7px 20px 8px 35px; */
 }
 .filtres-box:hover {
 	cursor: pointer;
@@ -281,7 +292,6 @@ main {
 	padding: 14px;
 	margin-top: -5px;
 	margin-left: -10px;
-	/* margin: -11px 0 0 -45px; */
 }
 /* bouton - texte */
 .filtres-box p {
@@ -322,37 +332,83 @@ main {
 	width: auto;
 }
 
+/*
+queries 
+  tablette  --default-pad
+  movbile   padding: 0 0 0 0;
+*/
 #section_hebergements{
 	padding: 0 var(--default-pad) 0 var(--default-pad);
 }
-#section_hebergements [class*="col"]:nth-child(1) {
-	background-color: #0065fc;
-	margin-right: 30px;
-}
 
+/* 
+  desktop 
+    flex-direction row-reverse
+    flex-wrap: nowrap;
+      herbergements_pop   Droite  Les plus populaires
+      herbergements       Guauche Hébergements à Marseille
+
+  tablette
+    flex-direction column-reverse
+    flex-wrap: nowrap;
+      herbergements_pop  col 2
+      herbergements      col 1
+  mobile
+    flex-direction: row-reverse
+    flex-wrap: wrap;
+      herbergements_pop   col 1
+      herbergements       col 2
+*/
 .row {
-	display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
+	display: flex; /* rendre le conteneur flexible */
+  flex-direction: row-reverse; /* (min-width: 769px) and (max-width: 992px)  = column-reverse */
+  justify-content: flex-end; /* Éléments flexibles groupés à la fin */
+  flex-wrap: nowrap; /* les éléments flexibles sont disposés sur une seule ligne */ 
+  /* (max-width: 360px) = flex-wrap: wrap */
 }
 
+/*
+  @media screen and (min-width: 769px) and (max-width: 992px) 
+  @media screen and (min-width: 360px) and (max-width: 768px)
+    margin-bottom: 30px;
+  @media screen and (max-width: 360px)
+    margin-bottom: 30px;
+
+  maquettes : partie Hébergements à Marseille
+  herbergements > herbergements-items > herbergements-container > herbergements-item
+  backgroudColor de la couleur définit par la charte
+  radius en mode desktop et tablette
+*/
 .herbergements {
 	background-color: #f2f2f2;
 	width: 100%;
-	padding: 3%;
-	border-radius: 20px;
 	height: auto;
-	margin-right: 20px;
-	
+	border-radius: 20px; /* (min-width: 360px) and (max-width: 768px) = 0  */
+	padding: 3%;
+	margin-right: 20px;  /* (min-width: 360px) and (max-width: 768px) = 0  */
+
 }
 
+/*
+  @media screen and (min-width: 769px) and (max-width: 992px) 
+  @media screen and (min-width: 360px) and (max-width: 768px)
+    margin-bottom: 30px;
+    margin-right: 0;
+  @media screen and (max-width: 360px)
+    margin-bottom: 30px;
+    margin-right: 0;
+
+  maquettes : Les plus populaires
+  herbergements_pop > herbergements-items > herbergements-container > herbergements-item
+  backgroudColor de la couleur définit par la charte
+  radius en mode desktop et tablette
+*/
 .herbergements_pop {
-	width: auto;
-	padding-left: 1.5%;
 	background-color: #f2f2f2;
-	padding: 3%;
-	border-radius: 20px;	
+	width: 40%;
 	height: auto;
+	border-radius: 20px;	/* (min-width: 360px) and (max-width: 768px) = 0  */
+	padding: 3%;
 }
 
 /* .row > * {
@@ -361,27 +417,39 @@ main {
 	max-width: 100%;
 } */
 
+/*  
+  les items 
+    Hébergements à Marseille 
+    Les plus populaires 
+      ( avoir si modification il doivent etre en collone, mais vu la taille de base élevée ils le seront avec wrap)
+    pas de queries prévu 
+    herbergements-items > herbergements-container > herbergements-item
+    peux contenir plusieurs container
+*/
 .herbergements-items {
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
-	flex-direction: row;
+	flex-direction: row; /* /\en mode desktop la devi herbergements_pop doit etre column/\ */ 
 	align-items: center;
-	justify-content: center;
 }
-
-.herbergements-items h2 {
-	font-size: 22px;
-}
-
+/*
+  (min-width: 769px) and (max-width: 992px)
+    .herbergements_pop .herbergements-container { flex-direction: row;  
+  herbergements-container > herbergements-item
+  peux contenir plusieurs items
+*/
 .herbergements-container {
 	display: flex;
-	flex-direction: row;
+	flex-direction: row; /*  mobile = lex-direction: column; margin: 0 */ 
 	width: 100%;
-	margin-bottom: 20px;
+  justify-content: space-between;
+}
+.herbergements-container:not(:last-child) {
+	margin-bottom: 20px; /* mobile = margin-bottom: 0; */
 }
 .herbergements_pop .herbergements-container {
-	flex-direction: column;
+	flex-direction: column; /* tablette = .herbergements_pop flex-direction: row; */
 }
 
 .herbergements-item {
@@ -391,13 +459,18 @@ main {
 	border-radius: 10px;
 	box-shadow: 0.5px 0.5px 4px 0px rgba(87, 87, 87, 0.301);
 }
-.herbergements .herbergements-item:not(:last-child) {
-	margin-right: 20px;
+.herbergements .herbergements-item {
+	width: 30%;
 }
+.herbergements .herbergements-item:not(:last-child) {
+	/* margin-right: 20px; */
+}
+.herbergements_pop .herbergements-item:not(:last-child) {
+  margin-bottom: 20px;
+} 
 
 .herbergements_pop .herbergements-item {
 	display: flex;
-	margin-bottom: 20px;
 }
 
 .herbergements-item img {
@@ -409,7 +482,7 @@ main {
 	border-radius: 10px 10px 0 0;
 }
 .herbergements_pop .herbergements-item img {
-	width: 150px;
+	width: 125px;
 	height: 135px;
 	object-fit: cover;
 	border-radius: 10px 0px 0px 10px;
@@ -432,7 +505,10 @@ main {
 	object-fit: fill;
 	white-space: nowrap;
 }
-
+.herbergements_pop .herbergements-infos-title {
+	object-fit:none;
+	white-space:normal;
+}
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
 	.row {
@@ -443,6 +519,9 @@ main {
 	.herbergements{
 		margin-bottom: 20px;
 	}
+  .herbergements_pop {
+    width: 100%;
+  }  
 	.herbergements_pop .herbergements-container {
 		flex-direction: row;
 	}
@@ -452,11 +531,15 @@ main {
 	.herbergements_pop .herbergements-item img {
 		width: 50%;
 	} 
+  .herbergements_pop .herbergements-item:not(:last-child) {
+    margin-bottom: 0;
+  } 
 }
 
 
 
-@media screen and (min-width: 360px) and (max-width: 768px) {
+
+@media screen and (max-width: 769px)  {
 	header {
 		/* background-color: rgb(1, 83, 56); */
 		display: flex;
@@ -487,113 +570,53 @@ main {
 		border-radius: 0;
 		margin-right: 0;
 		margin-bottom: 30px;
-		background-color: #0065fc;
 	}
+
+	.herbergements_pop {
+		width: 100%;
+	}
+
 	.herbergements-container {
 		flex-direction: column;
 		margin: 0;
 	} 
-	.herbergements-item {
-		margin-bottom: 10px;
-		width: 100%;
-	} 
+  .herbergements-container:not(:last-child) {
+    margin-bottom: 20px;
+  }  
+
+  .herbergements .herbergements-item {
+    width: 100%;
+  }
+  .herbergements .herbergements-item:not(:last-child) {
+    margin-bottom: 20px;
+  }  
+	.herbergements_pop .herbergements-item {
+		display: flex;
+	}	
+
 	.herbergements .herbergements-item img {
 		width: 100%;
-		object-fit: cover;
 		border-radius: 10px 10px 0 0;		
 	}  
 	.herbergements_pop .herbergements-item img {
-		width: 35%;
+		width: 130px;
 		height: 134px;
 	}  	
 
 	.herbergements-item-infos {
 		padding: 0 5px 0 5px;
 		width: 100%;
-		/* background-color: #0065fc; */
 	}   
 	.herbergements-infos-title{
-		font-size: 2.5vmax;
-	} 
-	.herbergements-infos-price{
 		font-size: 2.1vmax;
 	} 
-	.herbergements_pop {
-		width: 100%;
-	}
-	.herbergements_pop .herbergements-item {
-		display: flex;
-	}		
- 	
-}
-@media screen and (max-width: 360px)  {
-	header {
-		/* background-color: rgb(1, 83, 56); */
-		display: flex;
-		flex-direction: column;
-	}
-
-	.navbar-top-logo {
-		/* background-color: rgba(1, 6, 83, 0.507); */
-    margin: 0;
-		text-align: center;
-	}
-	ul.navbar-top-menu {
-		display: table;
-		width: 100%;
-		height: 45px;
-	}
-
-	header,
-	#section_hebergements{
-		padding: 0 0 0 0;
-	}
-
-	.row{
-		flex-wrap: wrap;
-	}
-	.herbergements_pop,
-	.herbergements{
-		border-radius: 0;
-		margin-right: 0;
-		margin-bottom: 30px;
-		background-color: #0065fc;
-	}
-	.herbergements-container {
-		flex-direction: column;
-		margin: 0;
-	} 
-	.herbergements-item {
-		margin-bottom: 10px;
-		width: 100%;
-	} 
-	.herbergements .herbergements-item img {
-		width: 100%;
-		object-fit: cover;
-		border-radius: 10px 10px 0 0;		
-	}  
-	.herbergements_pop .herbergements-item img {
-		width: 35%;
-		height: 134px;
-	}  	
-
-	.herbergements-item-infos {
-		padding: 0 5px 0 5px;
-		width: 100%;
-		/* background-color: #0065fc; */
-	}   
-	.herbergements-infos-title{
-		font-size: 2.5vmax;
-	} 
+	.herbergements_pop .herbergements-infos-title{
+		white-space:normal;
+	} 	
 	.herbergements-infos-price{
-		font-size: 2.1vmax;
+		font-size: 1.9vmax;
 	} 
-	.herbergements_pop {
-		width: 100%;
-	}
-	.herbergements_pop .herbergements-item {
-		display: flex;
-	}		
+	
 }
 
 

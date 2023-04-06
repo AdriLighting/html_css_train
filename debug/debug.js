@@ -11,11 +11,16 @@ function _debug(activate) {
         ["#section_filtres", "aquamarine"],
         ["#section_filtres h2", "#0065FC"],
         [".filtres-boxs", "#00d6fc"],
+        [".herbergements", "#0065fc"],
+        [".herbergements-item-infos", "#209187"],
     ]
     array.forEach(element => {
-        id = document.querySelector(element[0]);
+        id = document.querySelectorAll(element[0]);
         var value = "transparent";
         if (activate) value = element[1];
-        id.style.backgroundColor = value;
+        id.forEach(element => {
+            element.style.backgroundColor = value;   
+        });
+        
     });
 }
