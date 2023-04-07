@@ -30,7 +30,7 @@ body {
 	font-size: 14px;
 	line-height: 1.4;
 	margin: 0;
-	
+
 	background-color: white;
 }
 * {
@@ -86,7 +86,7 @@ header {
 	padding: 0 var(--default-pad) 0 var(--default-pad);
 	display: flex; /* pour pouvoir mettre le logo a coté dumenu */
 	justify-content: space-between; /* pour mettre le menu a droite du logo */
-	 /* [class*="col"]:nth-child(1)  */
+	/* [class*="col"]:nth-child(1)  */
 }
 /* 
   Logo 
@@ -114,6 +114,7 @@ li.menu-item {
 	vertical-align: middle; /* centrer le lien verticalement */
 	text-align: center; /* centrer le lien horizontalement */
 	border-top: 3px solid transparent; /* de base je met un border-top transaprent pour eviter une déformation de la cellule quand l'utilisateur activera le relower */
+	border-bottom: 3px solid transparent; /* de base je met un border-top transaprent pour eviter une déformation de la cellule quand l'utilisateur activera le relower */
 }
 li.menu-item:last-child {
 	font-weight: bold; /* pour coller a la maquette et mettre le lien s'inscrire en gras */
@@ -122,11 +123,13 @@ li.menu-item:last-child {
 li.menu-item:hover {
 	transition: border 1s;
 	border-top: 3px solid black;
+	/* border-bottom: 3px solid black; */
 	cursor: pointer;
 }
+
 /* unordered list - items : hover a */
 li.menu-item:hover a {
-	transition: color .5s;
+	transition: color 0.5s;
 	color: black;
 }
 
@@ -134,7 +137,7 @@ li.menu-item:hover a {
   ############################
 */
 #site-title {
-	padding: 20px var(--default-pad) 10px var(--default-pad);
+	padding: 10px var(--default-pad) 10px var(--default-pad);
 }
 
 /*
@@ -155,7 +158,7 @@ main {
 */
 /* Zone Du formulaire de recherche */
 #section_search {
-	padding: 0 var(--default-pad) 20px var(--default-pad);
+	padding: 10px var(--default-pad) 10px var(--default-pad);
 }
 #section_search form {
 	display: flex; /* barre de rechere en ligne = Ico map + input + bt submit */
@@ -190,6 +193,8 @@ main {
 	border: 2px solid #e0e0e0;
 	border-right-width: 0px;
 	border-left-width: 0px;
+	width: 235px;	
+
 }
 /* Input text */
 .form-icon-text input {
@@ -197,6 +202,7 @@ main {
 	border: 0 none;
 	font-size: 17px;
 	font-weight: bold;
+	width: 100%;
 }
 /* 
   Div submit
@@ -242,6 +248,9 @@ main {
 	transition: color 0.5s;
 	color: black;
 }
+.form-icon-submit .btn-submit-icone {
+	display: none;
+}
 
 /* 
   ############################
@@ -253,7 +262,7 @@ main {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	padding: 0 var(--default-pad) 10px var(--default-pad);
+	padding: 10px var(--default-pad) 10px var(--default-pad);
 }
 /* Titre */
 #section_filtres h2 {
@@ -300,7 +309,7 @@ main {
 	padding-right: 10px;
 	font-weight: bold;
 	font-size: 16px;
-	white-space: nowrap;	
+	white-space: nowrap;
 }
 
 .filtres-box:hover p {
@@ -337,7 +346,7 @@ queries
   tablette  --default-pad
   movbile   padding: 0 0 0 0;
 */
-#section_hebergements{
+#section_hebergements {
 	padding: 0 var(--default-pad) 0 var(--default-pad);
 }
 
@@ -361,10 +370,10 @@ queries
 */
 .row {
 	display: flex; /* rendre le conteneur flexible */
-  flex-direction: row-reverse; /* (min-width: 769px) and (max-width: 992px)  = column-reverse */
-  justify-content: flex-end; /* Éléments flexibles groupés à la fin */
-  flex-wrap: nowrap; /* les éléments flexibles sont disposés sur une seule ligne */ 
-  /* (max-width: 360px) = flex-wrap: wrap */
+	flex-direction: row-reverse; /* (min-width: 769px) and (max-width: 992px)  = column-reverse */
+	justify-content: flex-end; /* Éléments flexibles groupés à la fin */
+	flex-wrap: nowrap; /* les éléments flexibles sont disposés sur une seule ligne */
+	/* (max-width: 360px) = flex-wrap: wrap */
 }
 
 /*
@@ -385,8 +394,7 @@ queries
 	height: auto;
 	border-radius: 20px; /* (min-width: 360px) and (max-width: 768px) = 0  */
 	padding: 3%;
-	margin-right: 20px;  /* (min-width: 360px) and (max-width: 768px) = 0  */
-
+	margin-right: 20px; /* (min-width: 360px) and (max-width: 768px) = 0  */
 }
 
 /*
@@ -407,7 +415,7 @@ queries
 	background-color: #f2f2f2;
 	width: 40%;
 	height: auto;
-	border-radius: 20px;	/* (min-width: 360px) and (max-width: 768px) = 0  */
+	border-radius: 20px; /* (min-width: 360px) and (max-width: 768px) = 0  */
 	padding: 3%;
 }
 
@@ -430,7 +438,7 @@ queries
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
-	flex-direction: row; /* /\en mode desktop la devi herbergements_pop doit etre column/\ */ 
+	flex-direction: row; /* /\en mode desktop la devi herbergements_pop doit etre column/\ */
 	align-items: center;
 }
 /*
@@ -441,9 +449,9 @@ queries
 */
 .herbergements-container {
 	display: flex;
-	flex-direction: row; /*  mobile = lex-direction: column; margin: 0 */ 
+	flex-direction: row; /*  mobile = lex-direction: column; margin: 0 */
 	width: 100%;
-  justify-content: space-between;
+	justify-content: space-between;
 }
 .herbergements-container:not(:last-child) {
 	margin-bottom: 20px; /* mobile = margin-bottom: 0; */
@@ -466,8 +474,8 @@ queries
 	/* margin-right: 20px; */
 }
 .herbergements_pop .herbergements-item:not(:last-child) {
-  margin-bottom: 20px;
-} 
+	margin-bottom: 20px;
+}
 
 .herbergements_pop .herbergements-item {
 	display: flex;
@@ -486,7 +494,7 @@ queries
 	height: 135px;
 	object-fit: cover;
 	border-radius: 10px 0px 0px 10px;
-}  	
+}
 
 .herbergements-item-infos {
 	display: flex;
@@ -506,8 +514,8 @@ queries
 	white-space: nowrap;
 }
 .herbergements_pop .herbergements-infos-title {
-	object-fit:none;
-	white-space:normal;
+	object-fit: none;
+	white-space: normal;
 }
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
@@ -516,12 +524,12 @@ queries
 		flex-direction: column-reverse;
 		justify-content: flex-end;
 	}
-	.herbergements{
+	.herbergements {
 		margin-bottom: 20px;
 	}
-  .herbergements_pop {
-    width: 100%;
-  }  
+	.herbergements_pop {
+		width: 100%;
+	}
 	.herbergements_pop .herbergements-container {
 		flex-direction: row;
 	}
@@ -530,16 +538,13 @@ queries
 	}
 	.herbergements_pop .herbergements-item img {
 		width: 50%;
-	} 
-  .herbergements_pop .herbergements-item:not(:last-child) {
-    margin-bottom: 0;
-  } 
+	}
+	.herbergements_pop .herbergements-item:not(:last-child) {
+		margin-bottom: 0;
+	}
 }
 
-
-
-
-@media screen and (max-width: 769px)  {
+@media screen and (max-width: 769px) {
 	header {
 		/* background-color: rgb(1, 83, 56); */
 		display: flex;
@@ -548,7 +553,7 @@ queries
 
 	.navbar-top-logo {
 		/* background-color: rgba(1, 6, 83, 0.507); */
-    margin: 0;
+		margin: 0;
 		text-align: center;
 	}
 	ul.navbar-top-menu {
@@ -556,22 +561,58 @@ queries
 		width: 100%;
 		height: 45px;
 	}
+	ul.navbar-top-menu li:last-child  {
+		display: none;
+	}	
+	li.menu-item {
+		border-bottom: 3px solid rgba(0, 0, 0, 0.116);
+		border-top: 3px solid transparent;
+	}
+	li.menu-item:hover {
+		transition: border 1s;
+		border-top: 3px solid transparent;
+		border-bottom: 3px solid black;
+		cursor: pointer;
+	}
+	
+	#site-title,
+	#section_search {
+		transition: padding 0.8s;
+		padding: 10px 20px 10px 20px;
+	}
+	#section_filtres {
+		transition: padding 0.5s;
+		padding: 10px 20px 10px 20px;
+	}
+
+	.form-icon-submit .btn-submit-text{
+		display: none;
+	}
+	.form-icon-submit .btn-submit-icone {
+		display:block;
+	}
+	.form-icon-submit {
+		padding: 5px;
+		border-radius:  10px;
+		margin-left: -5px;
+	}
 
 	header,
-	#section_hebergements{
+	#section_hebergements {
 		padding: 0 0 0 0;
 	}
 
-	.row{
+	.row {
 		flex-wrap: wrap;
 	}
 	.herbergements_pop,
-	.herbergements{
+	.herbergements {
 		border-radius: 0;
 		margin-right: 0;
-		margin-bottom: 30px;
 	}
-
+	.herbergements {
+		background-color: transparent;
+	}
 	.herbergements_pop {
 		width: 100%;
 	}
@@ -579,46 +620,44 @@ queries
 	.herbergements-container {
 		flex-direction: column;
 		margin: 0;
-	} 
-  .herbergements-container:not(:last-child) {
-    margin-bottom: 20px;
-  }  
+	}
+	.herbergements-container:not(:last-child) {
+		margin-bottom: 20px;
+	}
 
-  .herbergements .herbergements-item {
-    width: 100%;
-  }
-  .herbergements .herbergements-item:not(:last-child) {
-    margin-bottom: 20px;
-  }  
+	.herbergements .herbergements-item {
+		width: 100%;
+	}
+	.herbergements .herbergements-item:not(:last-child) {
+		margin-bottom: 20px;
+	}
 	.herbergements_pop .herbergements-item {
 		display: flex;
-	}	
+	}
 
 	.herbergements .herbergements-item img {
 		width: 100%;
-		border-radius: 10px 10px 0 0;		
-	}  
+		border-radius: 10px 10px 0 0;
+	}
 	.herbergements_pop .herbergements-item img {
 		width: 130px;
 		height: 134px;
-	}  	
+	}
 
 	.herbergements-item-infos {
 		padding: 0 5px 0 5px;
 		width: 100%;
-	}   
-	.herbergements-infos-title{
+	}
+	.herbergements-infos-title {
 		font-size: 2.1vmax;
-	} 
-	.herbergements_pop .herbergements-infos-title{
-		white-space:normal;
-	} 	
-	.herbergements-infos-price{
+	}
+	.herbergements_pop .herbergements-infos-title {
+		white-space: normal;
+	}
+	.herbergements-infos-price {
 		font-size: 1.9vmax;
-	} 
-	
+	}
 }
-
 
 /*
   ############################
