@@ -1,5 +1,3 @@
-
-
 /*
 A VOIR
   compatibilitée navigateurs
@@ -63,11 +61,11 @@ h1 {
 	font-weight: bold;
 }
 h2 {
-	font-size: 22px;
+  font-size: 22px;
 }
 /* Désactivation des liens visité */
 a:visited {
-	color: var(--color-charte-blue);
+	color: none;
 }
 
 /* utilitaires pour les margin */
@@ -125,9 +123,8 @@ li.menu-item {
 	vertical-align: middle; /* centrer le lien verticalement */
 	text-align: center; /* centrer le lien horizontalement */
 	border-top: 3px solid transparent; /* de base je met un border-top transaprent pour eviter une déformation de la cellule quand l'utilisateur activera le relower */
-	border-bottom: 3px solid transparent; /* de base je met un border-bottom transaprent pour eviter une déformation de la cellule quand l'utilisateur activera le relower */
+	border-bottom: 3px solid transparent; /* de base je met un border-top transaprent pour eviter une déformation de la cellule quand l'utilisateur activera le relower */
 }
-
 li.menu-item:last-child {
 	font-weight: bold; /* pour coller a la maquette et mettre le lien s'inscrire en gras */
 }
@@ -135,8 +132,10 @@ li.menu-item:last-child {
 li.menu-item:hover {
 	transition: border 1s;
 	border-top: 3px solid black;
+	/* border-bottom: 3px solid black; */
 	cursor: pointer;
 }
+
 /* unordered list - items : hover a */
 li.menu-item:hover a {
 	transition: color 0.5s;
@@ -145,12 +144,10 @@ li.menu-item:hover a {
 
 /*
   ############################
-	Titre principal + description
 */
 #site-title {
 	padding: 10px var(--default-pad) 10px var(--default-pad);
 }
-
 
 /*
   ############################
@@ -166,6 +163,7 @@ main {
     #section_search
       form
         icone -> input text -> input submit
+    /\ Mobile - Faire le responsive en intergchangent le bouton text avec le bouton icone et reduire la width de l'input 
 */
 /* Zone Du formulaire de recherche */
 #section_search {
@@ -204,7 +202,8 @@ main {
 	border: 2px solid #e0e0e0;
 	border-right-width: 0px;
 	border-left-width: 0px;
-	width: 235px;
+	width: 235px;	
+
 }
 /* Input text */
 .form-icon-text input {
@@ -213,13 +212,12 @@ main {
 	font-size: 17px;
 	font-weight: bold;
 	width: 100%;
-	padding: 0 10px 0 0;
 }
 /* 
   Div submit
     peut étre ajuster le padding suivant le format tablette et mobile 
     tablette  - ? 
-    mobile    -    
+    mobile    - ?   
 */
 .form-icon-submit {
 	background-color: #0065fc;
@@ -231,16 +229,28 @@ main {
 	display: inline-flex;
 }
 /* 
-  button formulaire 
+  button formulaire avec text pour le format Desktop 
+    tablette  - ? 
+    mobile    - ?     
 */
 .form-icon-submit button {
 	cursor: pointer;
+
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+
 	background-color: transparent;
 	padding: 0;
 	border: 0;
+	border-radius: 0;
+	color: inherit;
+	appearance: none;
+
 	font-size: 17px;
 	font-weight: bold;
 	color: white;
+
 	padding: 7px;
 }
 .form-icon-submit:hover button {
@@ -268,7 +278,6 @@ main {
 	font-weight: bold;
 	font-size: 18px;
 	margin-right: 5px;
-	margin-bottom: 10px;
 }
 /* Icone + boutons */
 .filtres-boxs {
@@ -277,16 +286,13 @@ main {
 	flex-wrap: wrap;
 }
 .filtres-box {
-	border: 3px solid var(--color-bg-gray);
+	border: 3px solid var(--color-charte-lblue);
 	border-radius: 30px;
 	height: 43px;
 	width: auto;
 	margin-left: 10px;
 	margin-bottom: 10px;
-	margin-right: 10px;
 }
-
-
 .filtres-box:hover {
 	cursor: pointer;
 }
@@ -299,6 +305,8 @@ main {
 	color: var(--color-charte-blue);
 	background-color: var(--color-charte-lblue);
 	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
 	padding: 14px;
 	margin-top: -5px;
 	margin-left: -10px;
@@ -337,6 +345,7 @@ main {
 /*
   ############################
 */
+
 
 /*
 queries 
@@ -484,15 +493,15 @@ queries
 	width: 100%;
 	padding: 5px;
 	border-radius: 10px;
-	box-shadow: 0.5px 0.5px 4px 0.4px rgba(87, 87, 87, 0.301);
+	box-shadow: 0.5px 0.5px 4px .4px rgba(87, 87, 87, 0.301);
 }
 .herbergements-item a {
-	text-decoration: none;
-	color: black;
+  text-decoration: none;
+  color: black;
 }
 .herbergements-item:hover {
-	transition: 0.6s;
-	box-shadow: 0.1px 0.1px 5px 0.8px rgba(87, 87, 87, 0.781);
+  transition: .6s;
+  box-shadow: 0.1px 0.1px 5px .8px rgba(87, 87, 87, 0.781);
 }
 
 .herbergements .herbergements-item {
@@ -517,6 +526,7 @@ queries
 }
 .herbergements_pop .herbergements-item a {
 	display: flex; /* afficher le block infos a droite du block img */
+
 }
 
 .herbergements-item img {
@@ -540,9 +550,9 @@ queries
 		height: 134px;
 */
 .herbergements_pop .herbergements-item img {
-	width: 30%;
-	min-width: 100px;
-	height: 120px;
+  width: 30%;
+  min-width: 100px;
+  height: 120px;
 	border-radius: 5px 0px 0px 5px;
 }
 
@@ -571,12 +581,6 @@ queries
 */
 .herbergements-infos-price {
 	font-size: 1vmax;
-	font-size: 12px;
-}
-
-.herbergements-infos-price p {
-	display: inline;
-	font-weight: bold;
 }
 /*
   (max-width: 769px)
@@ -585,8 +589,7 @@ queries
 .herbergements-infos-title {
 	font-weight: 750;
 	font-size: 1.13vmax;
-	font-size: 13px;
-	object-fit: none;
+	object-fit: fill;
 	white-space: nowrap;
 }
 /*
@@ -595,19 +598,17 @@ queries
 */
 .herbergements_pop .herbergements-infos-title {
 	object-fit: none;
-	white-space: normal;
-	font-size: 1.13vmax;
-	font-size: 13px;
+  white-space: normal;
 }
 
-.herbergements-stars {
+.herbergements-stars{
 	font-size: 0.85vmax;
 }
-.star-gray {
-	color: #dcdfe0;
+.star-gray{
+  color: #Dcdfe0;
 }
-.star-blue {
-	color: #0065fc;
+.star-blue{
+  color: #0065FC;
 }
 /*
   ############################
@@ -615,96 +616,96 @@ queries
 */
 
 .activites {
-	/* background-color: rgba(165, 42, 42, 0.15); */
-	margin: 0;
-	/* padding: 0 46px 0 46px; */
-	padding: 3%;
+  /* background-color: rgba(165, 42, 42, 0.15); */
+  margin: 0;
+  /* padding: 0 46px 0 46px; */
+  padding: 3%;
 }
 
 .activites-items {
-	/* background-color: brown; */
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	height: 460px;
+  /* background-color: brown; */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 460px;
 }
 
 .activites-item {
-	width: 100%;
-	border-radius: 20px;
-	box-shadow: 1px 4px 14px 1px #d7d8d9;
-	margin-right: 10px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 1px 4px 14px 1px #d7d8d9;
 }
 .activites-item a {
-	width: 100%;
-	height: 100%;
-	border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;  
 
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-	/* background-color: aquamarine; */
-	color: black;
+  /* background-color: aquamarine; */
+  color: black;  
 }
 .activites-item:hover {
-	transition: 0.6s;
-	box-shadow: 0px 0px 7px #6a6b6b;
+  transition: .6s;
+  box-shadow: 0px 0px 7px #6a6b6b;
 }
 
-.activites-item img {
-	object-fit: cover;
-	border-radius: 16px 16px 0px 0px;
-	/* opacity: .5; */
+.activites-item img{
+  object-fit: cover;
+  border-radius: 16px 16px 0px 0px;
+  /* opacity: .5; */
 }
 .activites-item-double {
-	width: 22%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	margin-right: 10px;
+  width: 22%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .activites-item-1 {
-	width: 22%;
+  width: 22%;
 }
 .activites-item-2 {
-	height: 245px;
+  height: 245px;
 }
 .activites-item-3 {
-	height: 171px;
+  height: 171px;
 }
 .activites-item-4 {
-	height: 210px;
+  height: 210px;
 }
+
 
 .activites-item-title {
-	font-weight: bold;
-	font-size: 1.15vmax;
-	white-space: nowrap;
-	margin: auto 0 auto 0;
-	padding-left: 15px;
-	/* background-color: #0065fc; */
+  font-weight: bold;
+  font-size: 1.15vmax;
+  white-space: nowrap;
+  margin: auto 0 auto 0;
+  padding-left: 15px;
+  /* background-color: #0065fc; */
 }
 
-.activites-item-1 img {
-	width: 100%;
-	height: 90%;
+.activites-item-1 img{
+  width: 100%;
+  height: 90%;
 }
-.activites-item-2 img {
-	width: 100%;
-	height: 80%;
+.activites-item-2 img{
+  width: 100%;
+  height: 80%;
 }
-.activites-item-3 img {
-	width: 100%;
-	height: 72%;
+.activites-item-3 img{
+  width: 100%;
+  height: 72%;
 }
-.activites-item-4 img {
-	width: 100%;
-	height: 77%;
+.activites-item-4 img{
+  width: 100%;
+  height: 77%;
 }
 
 .section-title {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 /*
@@ -713,39 +714,36 @@ queries
 */
 .footer-row {
 	display: flex; /* rendre le conteneur flexible */
-	align-items: start;
-	justify-content: flex-end;
-	background-color: var(--color-bg-gray);
-	padding-top: 10px;
+  align-items: start;
+  justify-content: flex-end;
+  background-color: var(--color-bg-gray);
+  padding-top: 10px;
 }
 .footer-col {
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-direction: column;
-	width: 30%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
 }
 footer h3 {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 .footer-li {
-	margin-bottom: 5px;
-	font-size: 17px;
-	font-weight: 500;
+  margin-bottom: 5px;
+  font-size: 17px;
+  font-weight: 500;
 }
 footer a {
-	text-decoration: none;
-	color: black;
+  text-decoration: none;
+  color: black;
 }
 footer li:hover {
-	transition: 0.2s;
-	font-weight: 700;
+  transition: .2s;
+  font-weight: 700;
 }
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
-	#section_hebergements {
-		padding: 0 10px 0 10px;
-	}	
 	.section_hebergements-row {
 		display: flex;
 		flex-direction: column-reverse;
@@ -762,53 +760,48 @@ footer li:hover {
 	}
 	.herbergements_pop .herbergements-item:not(:last-child) {
 		margin-right: 20px;
-		margin-bottom: 0;
+    margin-bottom: 0;
 	}
 	.herbergements_pop .herbergements-item img {
 		width: 50%;
-	}
-	.herbergements-infos-title {
-		/* transition: .5s;
-		font-weight: 750;
-		font-size: 1.25vmax;
-		-o-object-fit: fill;
-		object-fit:fill;
-		white-space: normal; */
 	}
 
 }
 
 @media screen and (max-width: 769px) {
-	.activites-items {
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-content: space-between;
-		height: 100%;
-	}
-	.activites-item-double {
-		width: 100%;
-	}
-	.activites-item {
-		width: 100%;
-		height: 195px;
-		margin-bottom: 10px;
-	}
-	.activites-item img {
-		width: 100%;
-		height: 80%;
-	}
-	.activites-item-title {
-		font-size: 2.5vmax;
-	}
+  .activites-items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    height: 100%;
+  }
+  .activites-item-double {
+    width: 100%;
+  }
+  .activites-item {
+    width: 100%;
+    height: 195px;
+    margin-bottom: 10px;
+  }
+  .activites-item img{
+    width: 100%;
+    height:80%;
+  }
+  .activites-item-title {
+    /* background-color: #0065fc; */
+  }
+  .activites-item-title {
+    font-size: 2.5vmax;
+  }  
 
-	.footer-row {
-		flex-direction: column;
-		padding: 0 3% 0 3%;
-	}
-	.footer-col {
-		width: 100%;
-	}
+  .footer-row {
+    flex-direction: column;
+    padding: 0 3% 0 3%;
+  }
+  .footer-col {
+    width: 100%;
+  }
 
 	header {
 		/* background-color: rgb(1, 83, 56); */
@@ -822,17 +815,16 @@ footer li:hover {
 		text-align: center;
 	}
 	ul.navbar-top-menu {
-		display: flex;
+		display: table;
 		width: 100%;
-		height: 40px;
+		height: 45px;
 	}
-	ul.navbar-top-menu li:last-child {
+	ul.navbar-top-menu li:last-child  {
 		display: none;
-	}
+	}	
 	li.menu-item {
 		border-bottom: 3px solid rgba(0, 0, 0, 0.116);
 		border-top: 3px solid transparent;
-		width: 100%;
 	}
 	li.menu-item:hover {
 		transition: border 1s;
@@ -840,7 +832,7 @@ footer li:hover {
 		border-bottom: 3px solid black;
 		cursor: pointer;
 	}
-
+	
 	#site-title,
 	#section_search {
 		transition: padding 0.8s;
@@ -851,15 +843,15 @@ footer li:hover {
 		padding: 10px 20px 10px 20px;
 	}
 
-	.form-icon-submit .btn-submit-text {
+	.form-icon-submit .btn-submit-text{
 		display: none;
 	}
 	.form-icon-submit .btn-submit-icone {
-		display: block;
+		display:block;
 	}
 	.form-icon-submit {
 		padding: 5px;
-		border-radius: 10px;
+		border-radius:  10px;
 		margin-left: -5px;
 	}
 
@@ -906,62 +898,55 @@ footer li:hover {
 		border-radius: 10px 10px 0 0;
 	}
 	.herbergements_pop .herbergements-item img {
-		min-width: 144px;
+    min-width: 190px;
 		height: 134px;
 	}
+
 
 	.herbergements-item-infos {
 		padding: 0 5px 0 5px;
 		width: auto;
-		white-space: nowrap;
+    white-space: nowrap;
 	}
 	.herbergements-infos-title {
 		font-size: 2.1vmax;
 	}
 	.herbergements_pop .herbergements-infos-title {
-		font-size: 2.1vmax;
-		white-space: pre-wrap;
+		white-space: nowrap;
 	}
 	.herbergements-infos-price {
-		white-space: pre-wrap;
 		font-size: 1.9vmax;
 	}
 
-	.herbergements-stars {
-		font-size: 1.6vmax;
-	}
+  .herbergements-stars{
+    font-size: 1.6vmax;
+  }
+  
 }
 
 /*
   ############################
  ANIMATIONS
 */
-
 @keyframes anim_heart {
 	0% {
-		-webkit-transform: scale(0.9);
 		transform: scale(0.9);
 	}
 	35% {
-		-webkit-transform: scale(1);
 		transform: scale(1);
 	}
 	70% {
-		-webkit-transform: scale(0.9);
 		transform: scale(0.9);
 	}
 	100% {
-		-webkit-transform: scale(1);
 		transform: scale(1);
 	}
 }
 @keyframes anim_dog {
 	from {
-		-webkit-transform: rotate(25deg);
 		transform: rotate(25deg);
 	}
 	to {
-		-webkit-transform: rotate(0deg);
 		transform: rotate(0deg);
 	}
 }

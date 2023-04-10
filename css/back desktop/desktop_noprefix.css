@@ -1,5 +1,3 @@
-
-
 /*
 A VOIR
   compatibilitée navigateurs
@@ -67,7 +65,7 @@ h2 {
 }
 /* Désactivation des liens visité */
 a:visited {
-	color: var(--color-charte-blue);
+	color: none;
 }
 
 /* utilitaires pour les margin */
@@ -95,6 +93,8 @@ a:visited {
 header {
 	margin: 0;
 	padding: 0 var(--default-pad) 0 var(--default-pad);
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex; /* pour pouvoir mettre le logo a coté dumenu */
 	justify-content: space-between; /* pour mettre le menu a droite du logo */
 	/* [class*="col"]:nth-child(1)  */
@@ -125,9 +125,8 @@ li.menu-item {
 	vertical-align: middle; /* centrer le lien verticalement */
 	text-align: center; /* centrer le lien horizontalement */
 	border-top: 3px solid transparent; /* de base je met un border-top transaprent pour eviter une déformation de la cellule quand l'utilisateur activera le relower */
-	border-bottom: 3px solid transparent; /* de base je met un border-bottom transaprent pour eviter une déformation de la cellule quand l'utilisateur activera le relower */
+	border-bottom: 3px solid transparent; /* de base je met un border-top transaprent pour eviter une déformation de la cellule quand l'utilisateur activera le relower */
 }
-
 li.menu-item:last-child {
 	font-weight: bold; /* pour coller a la maquette et mettre le lien s'inscrire en gras */
 }
@@ -135,8 +134,10 @@ li.menu-item:last-child {
 li.menu-item:hover {
 	transition: border 1s;
 	border-top: 3px solid black;
+	/* border-bottom: 3px solid black; */
 	cursor: pointer;
 }
+
 /* unordered list - items : hover a */
 li.menu-item:hover a {
 	transition: color 0.5s;
@@ -145,12 +146,10 @@ li.menu-item:hover a {
 
 /*
   ############################
-	Titre principal + description
 */
 #site-title {
 	padding: 10px var(--default-pad) 10px var(--default-pad);
 }
-
 
 /*
   ############################
@@ -166,12 +165,15 @@ main {
     #section_search
       form
         icone -> input text -> input submit
+    /\ Mobile - Faire le responsive en intergchangent le bouton text avec le bouton icone et reduire la width de l'input 
 */
 /* Zone Du formulaire de recherche */
 #section_search {
 	padding: 10px var(--default-pad) 10px var(--default-pad);
 }
 #section_search form {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex; /* barre de rechere en ligne = Ico map + input + bt submit */
 	flex-direction: row;
 }
@@ -213,13 +215,12 @@ main {
 	font-size: 17px;
 	font-weight: bold;
 	width: 100%;
-	padding: 0 10px 0 0;
 }
 /* 
   Div submit
     peut étre ajuster le padding suivant le format tablette et mobile 
     tablette  - ? 
-    mobile    -    
+    mobile    - ?   
 */
 .form-icon-submit {
 	background-color: #0065fc;
@@ -231,16 +232,28 @@ main {
 	display: inline-flex;
 }
 /* 
-  button formulaire 
+  button formulaire avec text pour le format Desktop 
+    tablette  - ? 
+    mobile    - ?     
 */
 .form-icon-submit button {
 	cursor: pointer;
+
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+
 	background-color: transparent;
 	padding: 0;
 	border: 0;
+	border-radius: 0;
+	color: inherit;
+	appearance: none;
+
 	font-size: 17px;
 	font-weight: bold;
 	color: white;
+
 	padding: 7px;
 }
 .form-icon-submit:hover button {
@@ -258,6 +271,8 @@ main {
     iones + bouton "A CHANGER PAR LA SUITE".
 */
 #section_filtres {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -268,25 +283,23 @@ main {
 	font-weight: bold;
 	font-size: 18px;
 	margin-right: 5px;
-	margin-bottom: 10px;
 }
 /* Icone + boutons */
 .filtres-boxs {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 }
 .filtres-box {
-	border: 3px solid var(--color-bg-gray);
+	border: 3px solid var(--color-charte-lblue);
 	border-radius: 30px;
 	height: 43px;
 	width: auto;
 	margin-left: 10px;
 	margin-bottom: 10px;
-	margin-right: 10px;
 }
-
-
 .filtres-box:hover {
 	cursor: pointer;
 }
@@ -459,6 +472,8 @@ queries
   peux contenir plusieurs items
 */
 .herbergements-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	flex-direction: row; /*  mobile = lex-direction: column; margin: 0 */
 	width: 100%;
@@ -571,11 +586,12 @@ queries
 */
 .herbergements-infos-price {
 	font-size: 1vmax;
-	font-size: 12px;
+	display: flex; /* permet l'affichage du symbole € a droite */
 }
-
+.herbergements-infos-price::before {
+	content: "Nuit a partir de";
+}
 .herbergements-infos-price p {
-	display: inline;
 	font-weight: bold;
 }
 /*
@@ -585,8 +601,7 @@ queries
 .herbergements-infos-title {
 	font-weight: 750;
 	font-size: 1.13vmax;
-	font-size: 13px;
-	object-fit: none;
+	object-fit: fill;
 	white-space: nowrap;
 }
 /*
@@ -596,8 +611,6 @@ queries
 .herbergements_pop .herbergements-infos-title {
 	object-fit: none;
 	white-space: normal;
-	font-size: 1.13vmax;
-	font-size: 13px;
 }
 
 .herbergements-stars {
@@ -626,6 +639,7 @@ queries
 	width: 100%;
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
 	height: 460px;
 }
 
@@ -633,7 +647,6 @@ queries
 	width: 100%;
 	border-radius: 20px;
 	box-shadow: 1px 4px 14px 1px #d7d8d9;
-	margin-right: 10px;
 }
 .activites-item a {
 	width: 100%;
@@ -647,11 +660,14 @@ queries
 	color: black;
 }
 .activites-item:hover {
+	-webkit-transition: 0.6s;
+	-o-transition: 0.6s;
 	transition: 0.6s;
 	box-shadow: 0px 0px 7px #6a6b6b;
 }
 
 .activites-item img {
+	-o-object-fit: cover;
 	object-fit: cover;
 	border-radius: 16px 16px 0px 0px;
 	/* opacity: .5; */
@@ -661,7 +677,6 @@ queries
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	margin-right: 10px;
 }
 
 .activites-item-1 {
@@ -743,9 +758,6 @@ footer li:hover {
 }
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
-	#section_hebergements {
-		padding: 0 10px 0 10px;
-	}	
 	.section_hebergements-row {
 		display: flex;
 		flex-direction: column-reverse;
@@ -767,15 +779,6 @@ footer li:hover {
 	.herbergements_pop .herbergements-item img {
 		width: 50%;
 	}
-	.herbergements-infos-title {
-		/* transition: .5s;
-		font-weight: 750;
-		font-size: 1.25vmax;
-		-o-object-fit: fill;
-		object-fit:fill;
-		white-space: normal; */
-	}
-
 }
 
 @media screen and (max-width: 769px) {
@@ -822,9 +825,9 @@ footer li:hover {
 		text-align: center;
 	}
 	ul.navbar-top-menu {
-		display: flex;
+		display: table;
 		width: 100%;
-		height: 40px;
+		height: 45px;
 	}
 	ul.navbar-top-menu li:last-child {
 		display: none;
@@ -832,7 +835,6 @@ footer li:hover {
 	li.menu-item {
 		border-bottom: 3px solid rgba(0, 0, 0, 0.116);
 		border-top: 3px solid transparent;
-		width: 100%;
 	}
 	li.menu-item:hover {
 		transition: border 1s;
@@ -919,11 +921,9 @@ footer li:hover {
 		font-size: 2.1vmax;
 	}
 	.herbergements_pop .herbergements-infos-title {
-		font-size: 2.1vmax;
 		white-space: pre-wrap;
 	}
 	.herbergements-infos-price {
-		white-space: pre-wrap;
 		font-size: 1.9vmax;
 	}
 
@@ -939,29 +939,23 @@ footer li:hover {
 
 @keyframes anim_heart {
 	0% {
-		-webkit-transform: scale(0.9);
 		transform: scale(0.9);
 	}
 	35% {
-		-webkit-transform: scale(1);
 		transform: scale(1);
 	}
 	70% {
-		-webkit-transform: scale(0.9);
 		transform: scale(0.9);
 	}
 	100% {
-		-webkit-transform: scale(1);
 		transform: scale(1);
 	}
 }
 @keyframes anim_dog {
 	from {
-		-webkit-transform: rotate(25deg);
 		transform: rotate(25deg);
 	}
 	to {
-		-webkit-transform: rotate(0deg);
 		transform: rotate(0deg);
 	}
 }
