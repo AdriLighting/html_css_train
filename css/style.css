@@ -1,0 +1,466 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img, video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  padding: 0;
+}
+
+/*
+############## 
+*/
+body {
+  font-family: "Raleway", "Times New Roman", Times, serif; /*utilise Raleway sur l'ensemble du site*/
+  box-sizing: border-box;
+  line-height: 1.4;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.mtb-auto {
+  margin: auto 0 auto 0;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+.table {
+  display: table;
+}
+
+.table-cell {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/*********************
+	partie logo + menu de navigation 
+*********************/
+header {
+  display: flex; /* permet l'affichage du logo a coté du menu */
+  justify-content: space-between; /* Mets le menu sur le côté droit du bloc. */
+}
+header a:hover {
+  font-weight: bold; /* Effet semi-gras pour l'ensemble des liens */
+}
+header .table-cell {
+  /* Ajustement cellule : logo + liens menu
+  */
+  width: 200px;
+  height: 80px;
+}
+header nav .table-cell {
+  /* cellule liens
+  */
+  border-top: 2px solid transparent; /* Fond transparent pour éviter un décalage lors de l'effet hover */
+  border-bottom: 2px solid transparent;
+}
+header nav .table-cell:hover {
+  border-top: 2px solid black; /*affiche la couleure de la bordure-top*/
+}
+header > .table > .table-cell {
+  /* cellule logo
+  */
+  vertical-align: bottom; /* Affiche le logo en bas de la cellule. */
+}
+header img {
+  width: 120px; /* Taille en % à voir si une taille fixe et mieux appropriée */
+  object-fit: cover; /* éviter la déformation si redimensionnement de l'image ??*/
+}
+
+/*********************
+	Partie Titre principal + déscription
+*********************/
+#section_title {
+  margin: 20px 20px 20px 20px;
+}
+#section_title h1 {
+  margin-bottom: 3px;
+}
+
+/*********************
+	Partie rechercher une ville
+*********************/
+#section_search {
+  margin: 20px 20px 20px 20px;
+}
+#section_search form {
+  display: flex; /*barre de recherche en ligne = Ico map + input + bt submit*/
+  flex-direction: row;
+}
+#section_search .form-icon {
+  /* block icone localisation 
+  */
+  background-color: #e0e0e0;
+  border-radius: 10px 0 0 10px;
+  padding: 6px 5px 0px 5px;
+  border: 2px solid #e0e0e0;
+  border-right-width: 0px;
+}
+#section_search .form-icon i {
+  /* icone localisation 
+  */
+  margin-top: 5px;
+  font-size: 20px;
+}
+#section_search .form-icon-text {
+  /* block input text 
+  */
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  width: 235px;
+}
+#section_search .form-icon-text input {
+  /* input text 
+  */
+  height: 100%;
+  border: 0 none;
+  font-size: 17px;
+  font-weight: bold;
+  width: 100%;
+  padding: 0 10px 0 0;
+}
+#section_search .form-icon-submit {
+  /* block bouton submit 
+  */
+  background-color: #0065fc;
+  padding: 5px 5px 5px 0;
+  border-radius: 0 10px 10px 0;
+}
+#section_search .form-icon-submit:hover button {
+  transition: color 0.5s;
+  color: black; /* effet hover pour le bouton texte/icone */
+}
+#section_search button {
+  /* bouton text 
+  par default en mode desktop
+  *
+  */
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  padding: 7px;
+}
+#section_search .btn-submit-icone {
+  /* bouton icone loupe 
+  */
+  display: none; /* masqué en mode desktop */
+}
+
+/* 
+  ############################
+  Filtres
+    jme suis base sur tout un tas de pixel pour gerer les 
+    iones + bouton "A CHANGER PAR LA SUITE".
+*/
+#section_filtres {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20px 20px 20px 20px;
+}
+#section_filtres button {
+  display: flex;
+  border: 0;
+  background-color: transparent;
+}
+#section_filtres h2 {
+  /* Titre 
+  */
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+#section_filtres .filters-boxes {
+  /* Icone + boutons 
+  */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#section_filtres .filter-boxe-icone {
+  /* Icone 
+  */
+  position: absolute;
+  width: 47px;
+  height: 47px;
+  font-size: 20px;
+  color: #0065fc;
+  background-color: #deebff;
+  border-radius: 50%;
+  padding: 14px;
+  margin-top: -5px;
+  margin-left: -10px;
+}
+
+#section_filtres .filter-boxe {
+  border: 3px solid #f2f2f2;
+  border-radius: 30px;
+  height: 43px;
+  margin: 0 10px 10px 10px;
+  position: relative;
+}
+#section_filtres .filter-boxe:hover {
+  cursor: pointer;
+}
+#section_filtres .filter-boxe p {
+  /* bouton - texte 
+  */
+  padding-left: 45px;
+  padding-top: 7px;
+  padding-right: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  white-space: nowrap;
+}
+#section_filtres .filter-boxe:hover p {
+  transition: color 0.5s;
+  color: #0065fc;
+}
+#section_filtres .filter-boxe:nth-child(2):hover i, #section_filtres .filter-boxe:nth-child(3):hover i {
+  animation-name: anim_heart;
+  animation-duration: 1s;
+  animation-fill-mode: none;
+}
+#section_filtres .filter-boxe:nth-child(1):hover i, #section_filtres .filter-boxe:nth-child(4):hover i {
+  animation-name: anim_dog;
+  animation-duration: 1s;
+  animation-fill-mode: none;
+}
+
+/*********************
+	QUERIES
+*********************/
+@media only screen and (max-width: 992px) {
+  header {
+    display: block; /* affiche le menu en dessous du logo */
+  }
+  header .table {
+    width: 100%;
+  }
+  header .table-cell {
+    /* ajustement des block liens pour tablette et mobile 
+    */
+    height: 45px;
+  }
+  header nav .table-cell {
+    border-bottom: 2px solid rgb(161, 161, 161); /*afficher la couleur de la border-bot*/
+  }
+  header nav .table-cell:hover {
+    border-top: 2px solid transparent; /* désactive le hover de la bordure-top */
+    border-bottom: 2px solid black; /* active le hover de la bordure-bot */
+  }
+  header img {
+    width: 150px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  #section_search .btn-submit-text {
+    display: none; /* masque le bouton (texte) rechercher */
+  }
+  #section_search .btn-submit-icone {
+    display: block; /* affiche le bouton (icone) rechercher */
+  }
+  #section_search .form-icon-submit {
+    /* ajustement de la position pour avoir un carré arrondi 
+    */
+    padding: 5px;
+    border-radius: 10px;
+    margin-left: -5px;
+  }
+}
+/*
+  ############################
+ ANIMATIONS
+*/
+@keyframes anim_heart {
+  0% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  35% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  70% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes anim_dog {
+  from {
+    -webkit-transform: rotate(25deg);
+    transform: rotate(25deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+/*
+		<section>
+			<div class="card">
+        <div class="card-actions">
+            <div class="card-action">Ok</div>
+            <div class="card-cancel">Annuler</div>
+        </div>			
+    </div>
+		<div class="card-2" >
+			<div class="card-actions">
+				<div class="card-action">Ok</div>
+				<div class="card-cancel">Annuler</div>				
+				<div class="card-img">
+					<img src="./images/hebergements/au_coeur_de_leau.jpg" alt="">
+					<img src="./images/hebergements/au_coeur_de_leau.jpg" alt="">
+				</div>
+			</div>			
+		</section>
+
+%btn {
+	padding: em(5) em(12);
+	border-radius: 3px;
+}
+
+.btn {
+	@extend %btn;
+	text-decoration: none;
+	background: $primary;
+	color: #FFF;
+
+	&:hover {
+			background: rgba($primary, 0.5);
+	}
+}
+.btn-danger {
+	@extend .btn;
+
+	background: rgb(179, 77, 77);
+	&:hover {
+			background: rgb(116, 33, 33);
+	}
+}
+%shadow {
+	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+	@extend %shadow;
+	padding: 10px;
+	border-radius: 3px; 
+	position: relative;
+	background: #FFF;
+	@include triangle($color: #FFF, $size: 15px)
+
+}
+.card-2 {
+	@extend %shadow;
+	padding: 10px;
+	margin: 0 20px 0 20px;
+	border-radius: 3px; 
+	position: relative;
+	background: white;
+	.card-img {
+		position: absolute;
+		height: 200px;
+		background-color: #ff0000;
+		bottom: -200px;
+		left: 0;
+	}
+	img {
+		height: 200px;
+		clip-path: polygon(100% 100%, 100% 0%, 0% 0%);
+	}
+	img:last-child{
+		position: absolute;
+		left: 0;
+		clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
+		opacity: .8;
+	}
+	margin-top: 200px; 
+	margin-bottom: 200px; 
+}
+.card-2::after{
+	content:'';
+	width: 0;
+	height: 0;
+	border-bottom: 30px solid #FFFF00;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	position: absolute;
+	top: 30px * -1;
+	left: calc(50% - 30px);
+}
+.card-action {
+	@extend .btn;
+}
+
+.card-cancel {
+	@extend .btn-danger;
+}
+
+
+*/
+
+/*# sourceMappingURL=style.css.map */

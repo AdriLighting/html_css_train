@@ -1,0 +1,13 @@
+{
+  "name": "oc_p2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass ./sass/style.scss:./css/style.css --watch",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserslist": "last 1 versions"
+}

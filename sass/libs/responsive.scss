@@ -1,0 +1,21 @@
+$screen_only_tablette : "only screen and (min-width: #{$breakpoint_mobile}) and (max-width: #{$breakpoint_tablette})";
+$screen_mobile : "only screen and (max-width: #{$breakpoint_mobile}) ";
+$screen_tablette : "only screen and (max-width: #{$breakpoint_tablette}) ";
+
+
+$pad_desktop_lf : "0 20px 0 20px";
+$marg_desktop_tb : "20px 20px 20px 20px";
+
+@mixin triangle($color: #FFF, $size: 10px) {
+    &::after {
+        content:'';
+        width: 0;
+        height: 0;
+        border-top: $size solid $color;
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        position: absolute;
+        bottom: $size * -1;
+        left: calc(50% - #{$size});
+    }
+}
