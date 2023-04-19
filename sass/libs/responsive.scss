@@ -1,4 +1,5 @@
-$screen_only_tablette : "only screen and (min-width: #{$breakpoint_mobile}) and (max-width: #{$breakpoint_tablette})";
+
+$screen_only_tablette : "only screen and (min-width: #{$breakpoint_mobile_large}) and (max-width: #{$breakpoint_tablette})";
 $screen_mobile : "only screen and (max-width: #{$breakpoint_mobile}) ";
 $screen_tablette : "only screen and (max-width: #{$breakpoint_tablette}) ";
 

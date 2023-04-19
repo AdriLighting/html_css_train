@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass ./sass/style.scss:./css/style.css --watch",
+    "sass": "sass ./sass/style.scss:./css/style.css",
+    "sass_w": "sass ./sass/style.scss:./css/style.css --watch",
     "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/"
   },
   "author": "",
   "license": "ISC",
-  "browserslist": "last 1 versions"
+  "browserslist": "last 2 versions"
 }
